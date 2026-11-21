@@ -6,6 +6,10 @@ Multipage professional profile and author website. The original Landi stylesheet
 
 From the repository directory, run `node build.mjs`. Serve `dist/` as the site root with directory indexes enabled. For example, run `python -m http.server 8080 --directory dist` and open `http://localhost:8080/`. Public links use directory routes such as `/about/` and `/books/my-blue-rubber-slippers/`.
 
+## Deploy on Vercel
+
+Import the GitHub repository into Vercel. The checked-in configuration builds the static pages into dist/ and serves extensionless URLs with trailing slashes.
+
 ## Public launch
 
 The build uses `https://phillipaaidoo.com` by default. Set `SITE_URL` to the final public origin before building if hosting elsewhere, and verify the domain property in Google Search Console after the domain and hosting are connected. Submit `/sitemap.xml` and inspect the homepage and book URL. The host must serve a real 404 for unknown paths and issue a permanent redirect for alternate versions of each canonical URL if it serves them.

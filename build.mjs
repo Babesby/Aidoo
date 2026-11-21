@@ -19,29 +19,29 @@ const button = 'action';
 const cover = `<img class="book-art" src="/assets/photos/blue-rubber-slippers.webp" alt="My Blue Rubber Slippers cover featuring blue slippers in a glass display case" width="960" height="1200" loading="lazy">`;
 const feature = `<section class="book-feature"><div>${cover}</div><div><p class="label">Debut novel</p><h2>${bookName}</h2><blockquote>${line}</blockquote>${link(bookPath,'Explore the novel',button)}</div></section>`;
 const pages = [
-  ['/', 'Phillipa Aidoo | Founder, Developer & Author', 'Official website of Phillipa Aidoo, founder of ALLMORROW, co-founder of WOMATE, digital strategist, software developer and author of My Blue Rubber Slippers.', `
+  ['/', 'Phillipa Aidoo — Founder, Developer, Strategist & Author', 'Meet Phillipa Aidoo, founder of ALLMORROW, co-founder and COO of WOMATE, software developer, digital strategist and author of My Blue Rubber Slippers.', `
     ${homeHero(bookPath,bookName)}
     ${workTabs()}
     <div class="container">${feature}</div>
     <section class="call-to-action section"><div class="container"><div class="row content justify-content-center align-items-center position-relative"><div class="col-lg-8 mx-auto text-center">
-    <h2 class="display-4 mb-4">Let’s talk</h2><p class="mb-4">For projects, interviews and notes from readers.</p>${link('/contact/','Get in touch','btn btn-cta')}
+    <h2 class="display-4 mb-4">Let’s talk</h2><p class="mb-4">I’d love to hear what you’re working on or what stayed with you after reading the book.</p>${link('/contact/','Get in touch','btn btn-cta')}
     </div></div></div></section>`],
   ['/about/', 'About Phillipa Aidoo | Biography & Background', 'Read about Phillipa Aidoo’s work in software development, digital strategy, women’s climate leadership, the creative industries and fiction.', `
-    <section class="about section"><div class="container"><div class="row align-items-center gy-4"><div class="col-lg-7 prose"><p>Phillipa Aidoo is a Ghanaian founder, software developer, digital strategist and author. She founded ALLMORROW and co-founded WOMATE (Women in Climate), where she serves as Chief Operating Officer, Chief Strategist and Full-stack Developer. She designed WOMATE’s integrated climate-tech ecosystem and shapes the organisation’s strategic direction.</p>
-    <p>Her background includes the Ghana Institute of Journalism and work in web development and digital strategy through Grow-Online Agency. Her creative experience spans music, artist management and writing.</p>
-    <p>Her debut novel is <a href="${bookPath}"><em>${bookName}</em></a>. In her nonfiction, she writes about authority, spirituality and identity, with a particular interest in the assumptions people inherit and the voices that get heard.</p>
-    ${link(linkedin,'Find Phillipa on LinkedIn',button)}</div><div class="col-lg-5"><img class="author-photo img-fluid" src="/assets/photos/phillipa-portrait.webp" alt="Professional portrait of Phillipa Aidoo" width="960" height="960"></div></div></div></section>`, 'About me', 'Founder, developer, digital strategist and author based in Accra, Ghana.'],
+    <section class="about section"><div class="container"><div class="row align-items-center gy-4"><div class="col-lg-7 prose"><p>I’ve been telling stories since I was thirteen. I studied at the Ghana Institute of Journalism, and my creative work has taken me into music, artist management and fiction. African life gives me plenty to write about, especially the things people do that are hard to explain.</p>
+    <p>I founded ALLMORROW to build software and work with businesses on their websites and digital strategy through Grow-Online Agency. I also co-founded WOMATE (Women in Climate), where I’m Chief Operating Officer, Chief Strategist and Full-stack Developer. I designed its integrated climate-tech ecosystem and help set the organisation’s direction.</p>
+    <p>My debut novel, <a href="${bookPath}"><em>${bookName}</em></a>, takes place in a country where poverty is a privilege. I also write essays about faith, who gets to exercise authority and the versions of ourselves we put online.</p>
+    ${link(linkedin,'Find Phillipa on LinkedIn',button)}</div><div class="col-lg-5"><img class="author-photo img-fluid" src="/assets/photos/phillipa-portrait.webp" alt="Professional portrait of Phillipa Aidoo" width="960" height="960"></div></div></div></section>`, 'About Phillipa', 'I’m a founder, developer and writer based in Accra, Ghana.'],
   ['/ventures/', 'Ventures | ALLMORROW, WOMATE & Grow-Online Agency', 'Explore Phillipa Aidoo’s work with ALLMORROW, women’s climate leadership through WOMATE and digital strategy at Grow-Online Agency.', grid(
-    card('Founder','ALLMORROW','My technology venture and the home of my software projects, including CIRQUVO and handEwork.','/portfolio/','Explore the portfolio'),
+    card('Founder','ALLMORROW','I founded ALLMORROW and build software there, including CIRQUVO and handEwork.','/portfolio/','Explore the portfolio'),
     card('Co-founder &amp; Chief Operating Officer','WOMATE','As Chief Strategist and Full-stack Developer, I designed WOMATE’s integrated climate-tech ecosystem and shape the organisation’s strategic direction.','https://www.linkedin.com/company/womeninclimategh','Visit WOMATE'),
-    card('Digital strategy','Grow-Online Agency','My work with GoA spans digital strategy, web development, social media and brand visibility.','https://gh.linkedin.com/company/grow-online-agency','Visit Grow-Online Agency')), 'Ventures', 'Technology, digital strategy and women’s climate leadership.'],
+    card('Digital strategy','Grow-Online Agency','I help businesses decide how to reach customers online, then work on the websites and social media that support that plan.','https://gh.linkedin.com/company/grow-online-agency','Visit Grow-Online Agency')), 'Ventures'],
   ['/portfolio/', 'Portfolio | Phillipa Aidoo’s Software & Creative Work', 'Selected work and practice areas across Phillipa Aidoo’s software development, digital strategy and artist management.', grid(
-    card('Software development','CIRQUVO','A software project I’m building through ALLMORROW.'),
-    card('Software development','handEwork','A software project within my ALLMORROW portfolio.'),
-    card('Digital strategy','Web & brand strategy','I work on websites, social media and digital visibility through Grow-Online Agency.','/ventures/','About Grow-Online Agency'),
-    card('Creative industries','Artist management','My creative work includes artist management and music. For project or collaboration enquiries, get in touch.','/contact/','Discuss a project')), 'Selected work', 'Software projects, digital strategy and creative work.'],
-  ['/books/', 'Books by Phillipa Aidoo | Fiction & New Releases', 'Discover books by Phillipa Aidoo, starting with her debut novel My Blue Rubber Slippers, available on Kindle.', '<div class="container">' + feature + '</div>', 'Books', 'Fiction by Phillipa Aidoo.'],
-  [bookPath, 'My Blue Rubber Slippers | A Novel by Phillipa Aidoo', 'My Blue Rubber Slippers is the debut novel by Phillipa Aidoo. Explore the book and find the Kindle edition on Amazon.', `
+    card('Software development','CIRQUVO','In development at ALLMORROW.'),
+    card('Software development','handEwork','A software project at ALLMORROW.'),
+    card('Digital strategy','Web & brand strategy','At Grow-Online Agency, I develop websites and plan how businesses show up across their online channels.','/ventures/','About Grow-Online Agency'),
+    card('Creative industries','Artist management','I’ve worked in music and artist management. Get in touch if you have a music or artist project in mind.','/contact/','Discuss a project')), 'Selected work'],
+  ['/books/', 'Books by Phillipa Aidoo | Fiction & New Releases', 'Discover books by Phillipa Aidoo, starting with her debut novel My Blue Rubber Slippers, available on Kindle.', '<div class="container">' + feature + '</div>', 'Books'],
+  [bookPath, 'My Blue Rubber Slippers | A Novel by Phillipa Aidoo', 'In Phillipa Aidoo’s debut novel, everyone in Arcca has a fortune. Then Abena arrives in blue rubber slippers and upsets the price of everything.', `
     ${detailLayout(
       `<div class="service-box"><h4>Kindle edition</h4><div class="services-list">
       <a class="active" href="${amazon}"><i class="bi bi-book" aria-hidden="true"></i><span>View Kindle on Amazon</span></a>
@@ -49,18 +49,18 @@ const pages = [
       <div class="help-box d-flex flex-column justify-content-center align-items-center"><h4>Book enquiries</h4><a href="/contact/">Contact Phillipa</a></div>`,
       `<div class="book-feature detail"><div>${cover}</div><div><p class="eyebrow">Debut novel</p><blockquote>${line}</blockquote>
       <p>In Arcca, everybody owns a fortune. Poverty is a privilege and a market. Then Abena arrives in blue rubber slippers and upsets the price of everything.</p>
-      <section class="sample"><h2>Read a sample</h2><p>Check the Kindle listing for Amazon’s sample and preview options.</p>${link(amazon,'Open Kindle listing')}</section></div></div>`)}
+      <section class="sample"><h2>Read a sample</h2><p>Find preview options on the Kindle page.</p>${link(amazon,'Open Kindle listing')}</section></div></div>`)}
     <section class="section book-gallery"><div class="container"><div class="section-title"><h2>Book artwork</h2></div><div class="row g-4 justify-content-center"><div class="col-sm-6 col-lg-4"><img src="/assets/photos/literary-showcase.webp" alt="Literary showcase poster for My Blue Rubber Slippers" width="960" height="1200" loading="lazy"></div><div class="col-sm-6 col-lg-4"><img src="/assets/photos/editorial-display.webp" alt="Stack of My Blue Rubber Slippers books against a lavender and turquoise background" width="853" height="1280" loading="lazy"></div></div></div></section>`],
   ['/journal/', 'Journal | Essays & Ideas by Phillipa Aidoo', 'Read Phillipa Aidoo’s essays on personal branding, identity, faith and authority, with links to her published writing.', grid(
-    card('Identity & creative work','Maybe My Brand Is Being Me','A funny, candid look at personal branding and the pressure to sound polished online.',essay,'Read the essay'),
-    card('Faith & society','The Illusion of Authority','A reflection on the idea of dominion and what it asks us to accept about who gets to have power.',linkedin+'#articles','Browse published essays')), 'Journal', 'Essays and reflections on identity, faith, authority and making things.'],
+    card('Identity & creative work','Maybe My Brand Is Being Me','I asked ChatGPT to write me a bio for my very important LinkedIn audience. Then I rewrote it to sound like me.',essay,'Read the essay'),
+    card('Faith & society','The Illusion of Authority','What happens when people take dominion as permission to rule over everything?',linkedin+'#articles','Browse published essays')), 'Journal', 'On faith, authority and the strange business of being yourself online.'],
   ['/press/', 'Press & Media | Phillipa Aidoo', 'Press coverage, a short professional biography, and interview and speaking enquiries for Phillipa Aidoo.', grid(
     card('Graphic Showbiz · December 2024','I don’t believe in competition','Gifty Owusu-Amoah interviews Mzphill about the single “Josiah” and what it means to grow as an artist.',graphic,'Read the interview'),
-    card('For editors & event organisers','Short biography','Phillipa Aidoo is a Ghanaian founder, software developer, digital strategist and author. She founded ALLMORROW, co-founded WOMATE and wrote the novel My Blue Rubber Slippers.','/contact/','Request press materials')), 'Press', 'Coverage, biography and media enquiries.'],
+    card('For editors & event organisers','Short biography','Phillipa Aidoo is a Ghanaian founder, software developer, digital strategist and author. She founded ALLMORROW, co-founded WOMATE and wrote the novel My Blue Rubber Slippers.','/contact/','Request press materials')), 'Press', 'Interviews and a short bio for editors and event organisers.'],
   ['/contact/', 'Contact Phillipa Aidoo | Business, Press & Readers', 'Contact Phillipa Aidoo for technology projects, partnerships, interviews, speaking, creative collaborations or reader enquiries.', grid(
-    card('Business & creative work','Work with me','For software, digital strategy, climate partnerships or creative collaborations, reach out with a short note about what you have in mind.',linkedin,'Connect on LinkedIn'),
-    card('Press & literary enquiries','Get in touch','For interviews, speaking invitations, book enquiries and reader notes, contact me through my LinkedIn profile.',linkedin,'Find Phillipa on LinkedIn'),
-    card('Writing updates','Follow my writing','Find my latest essays and publishing updates on LinkedIn.',linkedin,'Follow on LinkedIn')), 'Contact', 'For projects, conversations and notes from readers.'],
+    card('Business & creative work','Work with me','Tell me what you’re working on and where you’d like me to come in.',linkedin,'Connect on LinkedIn'),
+    card('Press & literary enquiries','Get in touch','For interviews, speaking invitations and book enquiries, send me a note on LinkedIn. I’d love to hear from readers, too.',linkedin,'Find Phillipa on LinkedIn'),
+    card('Writing updates','Follow my writing','I share new essays and book updates on LinkedIn.',linkedin,'Follow on LinkedIn')), 'Contact'],
 ];
 
 function escapeHtml(value) {

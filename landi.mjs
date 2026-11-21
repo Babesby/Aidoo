@@ -52,17 +52,17 @@ export function homeHero(bookPath, bookName) {
     ['code-slash','ALLMORROW','Founder','/ventures/'],
     ['globe-africa','WOMATE','Co-founder &amp; COO','/ventures/'],
     ['window','Grow-Online Agency','Digital strategy','/portfolio/'],
-    ['book','Fiction & essays','Author','/books/'],
+    ['book','My Blue Rubber Slippers','Author','/books/'],
   ];
   return `<section id="hero" class="hero section">
     <div class="container">
       <div class="row align-items-center gy-4">
         <div class="col-lg-6"><div class="hero-content">
           <div class="company-badge mb-4"><i class="bi bi-geo-alt me-2" aria-hidden="true"></i> Accra, Ghana</div>
-          <h1 class="mb-4">Phillipa <span class="accent-text">Aidoo.</span></h1>
-          <p class="manifesto mb-3">I build things. I write things.<br>Occasionally, I question everything.</p>
-          <p class="mb-4">I work across software, digital strategy, climate action and fiction. Some ideas turn into platforms. One turned into an entire fictional civilisation.</p>
-          <div class="hero-buttons"><a href="/portfolio/" class="btn btn-primary me-2">Explore my work</a><a href="/books/" class="btn btn-link"><i class="bi bi-book me-1" aria-hidden="true"></i> Browse my books</a></div>
+          <h1 class="mb-4">Phillipa <span class="accent-text">Aidoo</span></h1>
+          <p class="manifesto mb-3">I build software and write fiction.</p>
+          <p class="mb-4">I founded ALLMORROW and lead strategy and software development at WOMATE. In my first novel, I imagined a country where only the rich can afford to be poor.</p>
+          <div class="hero-buttons"><a href="/portfolio/" class="btn btn-primary me-2">See my work</a><a href="${bookPath}" class="btn btn-link"><i class="bi bi-book me-1" aria-hidden="true"></i> Meet my debut novel</a></div>
         </div></div>
         <div class="col-lg-6"><div class="hero-image">
           <img class="author-photo hero-photo img-fluid" src="/assets/photos/phillipa-hero.webp" alt="Phillipa Aidoo in a patterned pink dress" width="960" height="960" fetchpriority="high">
@@ -78,12 +78,12 @@ export function homeHero(bookPath, bookName) {
 
 export function workTabs() {
   const tabs = [
-    ['technology','Technology','Building software and digital experiences','My work at ALLMORROW includes CIRQUVO and handEwork. Through Grow-Online Agency I work across web development, digital strategy and brand visibility.','/portfolio/','Explore the portfolio','code-square'],
-    ['climate','Climate','Supporting women in climate leadership','As WOMATE’s COO, Chief Strategist and Full-stack Developer, I shape its strategy and build its integrated climate-tech ecosystem.','/ventures/','Explore the ventures','globe-africa'],
-    ['writing','Writing','Fiction, essays and inconvenient questions','My debut novel is My Blue Rubber Slippers. In my essays, I write about faith, identity, authority and the pressure to sound polished online.','/journal/','Read the journal','pen'],
+    ['technology','Technology','Software and digital strategy','I build software at ALLMORROW, including CIRQUVO and handEwork. At Grow-Online Agency, I work with businesses on their websites, social media and how they reach customers online.','/portfolio/','Explore the portfolio','code-square'],
+    ['climate','Climate','Climate leadership at WOMATE','I designed the technology behind WOMATE’s climate leadership work. As COO, I shape the organisation’s direction and build the systems that support its programmes.','/ventures/','Explore the ventures','globe-africa'],
+    ['writing','Writing','Novels and essays','I’ve been writing stories since I was thirteen. These days I write fiction and essays about things I keep coming back to, from faith and authority to how strange it feels to turn yourself into a brand.','/journal/','Read the journal','pen'],
   ];
   return `<section id="features" class="features section">
-    <div class="container section-title"><h2>Across disciplines</h2></div>
+    <div class="container section-title"><h2>What I do</h2></div>
     <div class="container">
       <div class="d-flex justify-content-center"><ul class="nav nav-tabs" role="tablist">${tabs.map(([id,label],index) => `<li class="nav-item" role="presentation"><button class="nav-link${index === 0 ? ' active' : ''}" id="tab-${id}" type="button" data-bs-toggle="tab" data-bs-target="#panel-${id}" role="tab" aria-controls="panel-${id}" aria-selected="${index === 0}">${label}</button></li>`).join('')}</ul></div>
       <div class="tab-content">${tabs.map(([id,label,title,description,url,cta,icon],index) => `<div class="tab-pane fade${index === 0 ? ' show active' : ''}" id="panel-${id}" role="tabpanel" aria-labelledby="tab-${id}" tabindex="0"><div class="row align-items-center gy-4"><div class="col-lg-7"><h3>${title}</h3><p>${description}</p><a class="read-more" href="${url}">${cta}</a></div><div class="col-lg-5"><div class="feature-art" aria-hidden="true"><i class="bi bi-${icon}"></i></div></div></div></div>`).join('')}</div>

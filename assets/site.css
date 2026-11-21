@@ -1,7 +1,7 @@
 :root {
-  --default-font: "Manrope", system-ui, sans-serif;
-  --heading-font: "Instrument Serif", Georgia, serif;
-  --nav-font: "Manrope", system-ui, sans-serif;
+  --default-font: "DM Sans", system-ui, sans-serif;
+  --heading-font: "Bricolage Grotesque", "DM Sans", system-ui, sans-serif;
+  --nav-font: "DM Sans", system-ui, sans-serif;
   --background-color: #fbf9ff;
   --butter: #ffe79a;
   --lavender: #493674;
@@ -12,13 +12,13 @@
   --nav-dropdown-hover-color: #493674;
 }
 .light-background { --background-color: #f2edf9; --surface-color: #fbf9ff; }
-.header .logo .sitename, .footer .logo .sitename { font: 400 2rem/1 var(--heading-font); white-space: nowrap; color: var(--heading-color); }
+.header .logo .sitename, .footer .logo .sitename { font: 700 clamp(1.16rem, 2.4vw, 1.55rem)/1.1 var(--heading-font); white-space: nowrap; color: var(--heading-color); }
 .logo .sitename span { color: var(--accent-color); }
 .header .navmenu a { font-weight: 700; }
 .mobile-nav-toggle, .scroll-top { background-clip: padding-box; border: 0; }
 .mobile-nav-toggle { padding: .35rem; background: none; }
-.hero .hero-content h1 { font: 400 clamp(4rem, 9vw, 8rem)/.92 var(--heading-font); letter-spacing: -.04em; }
-.hero .hero-content .manifesto { font: 400 clamp(1.5rem, 3vw, 2.5rem)/1.15 var(--heading-font); }
+.hero .hero-content h1 { font: 700 clamp(2.75rem, 7.3vw, 6.75rem)/.98 var(--heading-font); letter-spacing: -.04em; }
+.hero .hero-content .manifesto { font: 600 clamp(1.2rem, 2.5vw, 1.85rem)/1.25 var(--heading-font); }
 .hero .hero-content p { max-width: 49ch; }
 .author-photo { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 2rem; }
 .hero .hero-image .hero-photo { max-width: 29rem; margin-inline: auto; }
@@ -28,16 +28,15 @@
 .hero .stat-item:hover strong { color: var(--accent-color); }
 .eyebrow, .label { color: var(--accent-color); font-size: .875rem; font-weight: 800; letter-spacing: .075em; text-transform: uppercase; }
 .services .service-card { height: 100%; }
-.services .service-card h3 { font-size: 2.1rem; }
-.section-title h2, .features .tab-content h3 { font-weight: 400; font-size: clamp(2.35rem, 5vw, 4.25rem); }
+.section-title h2, .features .tab-content h3 { font-weight: 650; font-size: clamp(1.7rem, 4vw, 3rem); }
 .features .nav-tabs .nav-link { font-weight: 800; }
 .feature-art { display: grid; place-items: center; min-height: 12rem; background: #eee6fa; border-radius: 1.5rem; color: var(--accent-color); font-size: 5rem; }
-.page-title h1 { font: 400 clamp(3rem, 7vw, 5rem)/1 var(--heading-font); }
+.page-title h1 { font: 700 clamp(2rem, 6vw, 4.25rem)/1.06 var(--heading-font); }
 .page-intro { margin: 1rem 0 0; max-width: 65ch; }
 .prose { font-size: 1.1rem; }
 .book-feature {
   display: grid;
-  grid-template-columns: .85fr 1.15fr;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
   align-items: center;
   gap: clamp(1.5rem, 5vw, 4rem);
   padding: clamp(1.25rem, 5vw, 4rem);
@@ -46,8 +45,8 @@
   background: #efedf9;
 }
 .book-feature.detail { margin: 0; }
-.book-feature h2 { font: 400 clamp(2.5rem, 5vw, 4.75rem)/1 var(--heading-font); }
-.book-feature blockquote { font: 400 clamp(1.7rem, 3vw, 2.6rem)/1.05 var(--heading-font); color: #26255d; margin: .75rem 0 1.25rem; }
+.book-feature h2 { font: 700 clamp(1.8rem, 4vw, 3.5rem)/1.05 var(--heading-font); }
+.book-feature blockquote { font: 550 clamp(1.25rem, 2.7vw, 2rem)/1.22 var(--heading-font); color: #26255d; margin: .75rem 0 1.25rem; }
 .book-art { display: block; width: 100%; max-width: 18rem; height: auto; margin: auto; border-radius: .75rem; }
 .book-gallery img { display: block; width: 100%; height: auto; border-radius: .75rem; }
 .sample h2 { font-size: 2rem; }
@@ -102,3 +101,52 @@
 }
 .project-preview-image img { display: block; width: 100%; height: auto; }
 .project-preview-image:hover { border-color: var(--accent-color); }
+
+h1, h2, h3 { overflow-wrap: anywhere; }
+.header .header-container { gap: .75rem; }
+.features .tab-content { margin-top: clamp(1.25rem, 4vw, 2.5rem); }
+.features .nav-tabs { flex-wrap: nowrap; max-width: 100%; }
+.features .nav-link { min-height: 44px; padding-inline: clamp(.65rem, 3vw, 1.75rem); }
+.services .service-card { gap: clamp(.75rem, 2vw, 1.3rem); padding: clamp(1rem, 3vw, 2rem); border: 1px solid #e5def0; border-radius: 1rem; }
+.services .service-card .icon { margin: 0; width: 2.75rem; height: 2.75rem; font-size: 1.2rem; border-radius: .65rem; }
+.services .service-card h3 { font-size: clamp(1.3rem, 3vw, 1.9rem); }
+.services .service-card > div:last-child { min-width: 0; }
+#buy-editions { scroll-margin-top: 6rem; }
+.edition-heading { font-size: 1.3rem; margin-bottom: 1rem; }
+.page-title .breadcrumbs ol { flex-wrap: wrap; row-gap: .3rem; }
+
+@media (max-width: 1199.98px) {
+  .header .header-container { width: calc(100% - 1.5rem); padding: .4rem .75rem; }
+  .header .mobile-nav-toggle, .mobile-nav-active .header .mobile-nav-toggle {
+    position: static; display: inline-flex; align-items: center; gap: .4rem;
+    min-height: 44px; margin: 0; padding: .45rem .7rem; border-radius: .65rem;
+    background: #eee6fa; color: var(--heading-color); font: 700 .875rem/1 var(--nav-font);
+  }
+  .mobile-nav-toggle i { font-size: 1.25rem; }
+  body.mobile-nav-active { overflow: auto; }
+  .mobile-nav-active .header .navmenu { position: static; overflow: visible; background: none; }
+  .header .navmenu > ul {
+    inset: calc(100% + .5rem) 0 auto; max-height: calc(100dvh - 6.5rem);
+    padding: .4rem; border: 1px solid #e5def0; border-radius: .9rem;
+  }
+  .header .navmenu a { min-height: 44px; padding: .55rem .75rem; border-radius: .45rem; }
+  .header .navmenu a.active { background: #eee6fa; }
+}
+@media (max-width: 991.98px) {
+  .hero .hero-content { text-align: left; }
+  .hero .hero-content .manifesto, .hero .hero-content p { margin-inline: 0; }
+  .hero .hero-buttons { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; justify-content: flex-start; }
+  .hero .hero-buttons .btn { margin: 0 !important; }
+  .book-feature.detail { grid-template-columns: 1fr; }
+}
+@media (max-width: 575.98px) {
+  .section { padding-block: 2.5rem; }
+  .hero { padding-top: 6rem; }
+  .hero .hero-content h1 { margin-bottom: 1rem !important; }
+  .hero .hero-image .hero-photo { border-radius: 1rem; }
+  .hero .stats-row { padding: 1rem; margin-inline: 0; }
+  .hero .stat-item { gap: .65rem; }
+  .page-title { padding: 6rem 0 1.5rem; }
+  .book-feature { margin-block: 1.25rem; }
+  .footer .footer-top { padding-top: 2rem; }
+}

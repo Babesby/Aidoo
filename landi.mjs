@@ -7,8 +7,8 @@ export function siteHeader(nav, path) {
         <ul id="site-navigation">${navigation.map(([url,label]) => {
           const active = url === '/' ? path === '/' : path.startsWith(url);
           return `<li><a href="${url}"${active ? ' class="active" aria-current="page"' : ''}>${label}</a></li>`;
-        }).join('')}<li class="d-xl-none"><a href="/contact/">Contact</a></li></ul>
-        <button class="mobile-nav-toggle d-xl-none bi bi-list" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-navigation"></button>
+        }).join('')}<li class="d-xl-none"><a href="/contact/"${path === '/contact/' ? ' class="active" aria-current="page"' : ''}>Contact</a></li></ul>
+        <button class="mobile-nav-toggle d-xl-none" type="button" aria-expanded="false" aria-controls="site-navigation"><i class="bi bi-list" aria-hidden="true"></i><span>Menu</span></button>
       </nav>
       <a class="btn-getstarted d-none d-xl-inline-block" href="/contact/"${path === '/contact/' ? ' aria-current="page"' : ''}>Contact</a>
     </div>

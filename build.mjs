@@ -6,7 +6,12 @@ const origin = new URL(process.env.SITE_URL || 'https://phillipaaidoo.allmorrow.
 const mwahli = 'https://mwahli.allmorrow.com/';
 const womate = 'https://www.womate.org/';
 const linkedin = 'https://gh.linkedin.com/in/phillipa-aidoo';
-const amazon = 'https://www.amazon.com/dp/B0HSFRWVTC';
+const editions = [
+  ['Kindle','B0HSFRWVTC','EBook','tablet'],
+  ['Paperback','B0HSFYVZBQ','Paperback','book'],
+  ['Hardcover','B0HSFHCJ8B','Hardcover','book-half'],
+].map(([label,asin,format,icon])=>({label,url:'https://www.amazon.com/dp/'+asin,format,icon}));
+const amazon = editions[0].url;
 const essay = 'https://www.linkedin.com/pulse/maybe-my-brand-being-me-phillipa-aidoo-rtk1e';
 const graphic = 'https://www.graphic.com.gh/entertainment/showbiz-news/i-dont-believe-in-competition-mzphill.html';
 const bookPath = '/books/my-blue-rubber-slippers/';
@@ -33,10 +38,10 @@ const book = {
   '@type':'Book','@id':origin+bookPath+'#book',name:bookName,url:origin+bookPath,
   image:origin+'/assets/photos/blue-rubber-slippers.webp',author:entity(personId),
   genre:bookGenre,inLanguage:'en',description:synopsis,
-  workExample:{
-    '@type':'Book','@id':origin+bookPath+'#kindle-edition',name:bookName,
-    bookFormat:'https://schema.org/EBook',url:amazon,author:entity(personId),
-  },
+  workExample:editions.map(({label,url,format})=>({
+    '@type':'Book','@id':origin+bookPath+'#'+label.toLowerCase()+'-edition',name:bookName,
+    bookFormat:'https://schema.org/'+format,url,author:entity(personId),
+  })),
 };
 const nav = [['/about/','About'],['/ventures/','Ventures'],['/portfolio/','Portfolio'],['/books/','Books'],['/journal/','Journal'],['/press/','Press'],['/contact/','Contact']];
 const link = (url,label,style='text-link') => `<a class="${style}" href="${url}">${label}</a>`;
@@ -90,15 +95,16 @@ const pages = [
     card('Software development','handEwork','A software project at ALLMORROW.'),
     card('Digital strategy','Web & brand strategy','At Grow-Online Agency, I develop websites and plan how businesses show up across their online channels.','/ventures/','About Grow-Online Agency'),
     card('Creative industries','Artist management','I’ve worked in music and artist management. Get in touch if you have a music or artist project in mind.','/contact/','Discuss a project')), 'Selected work'],
-  ['/books/', 'Books by Phillipa Aidoo | Fiction & New Releases', 'Discover books by Phillipa Aidoo, starting with her debut novel My Blue Rubber Slippers, available on Kindle.', '<div class="container">' + feature + '</div>', 'Books'],
+  ['/books/', 'Books by Phillipa Aidoo | Fiction & New Releases', 'Discover books by Phillipa Aidoo, starting with her debut novel My Blue Rubber Slippers, available in Kindle, paperback and hardcover editions.', '<div class="container">' + feature + '</div>', 'Books'],
   [bookPath, 'My Blue Rubber Slippers | A Novel by Phillipa Aidoo', 'In Phillipa Aidoo’s debut novel, everyone in Arcca has a fortune. Then Abena arrives in blue rubber slippers and upsets the price of everything.', `
     ${detailLayout(
-      `<div class="service-box"><h4>Kindle edition</h4><div class="services-list">
-      <a class="active" href="${amazon}"><i class="bi bi-book" aria-hidden="true"></i><span>Buy the Kindle edition on Amazon</span></a>
+      `<div class="service-box" id="buy-editions"><h2 class="edition-heading">Buy on Amazon</h2><div class="services-list">
+      ${editions.map(({label,url,icon})=>`<a href="${url}"><i class="bi bi-${icon}" aria-hidden="true"></i><span>${label}</span></a>`).join('')}
       <a href="${amazon}#customerReviews"><i class="bi bi-chat" aria-hidden="true"></i><span>Reader reviews on Amazon</span></a></div></div>
       <div class="help-box d-flex flex-column justify-content-center align-items-center"><h4>Book enquiries</h4><a href="/contact/">Contact Phillipa</a></div>`,
       `<div class="book-feature detail"><div>${cover}</div><div><p class="eyebrow">${bookGenre}</p><p>By <a href="/about/">${author}</a></p><blockquote>${line}</blockquote>
       <p>${synopsis}</p>
+      <a class="action d-lg-none" href="#buy-editions">Choose an edition</a>
       <section class="sample"><h2>Read a sample</h2><p>Find preview options on the Kindle page.</p>${link(amazon,'Open Kindle listing')}</section></div></div>`)}
     <section class="section book-gallery"><div class="container"><div class="section-title"><h2>Book artwork</h2></div><div class="row g-4 justify-content-center"><div class="col-sm-6 col-lg-4"><img src="/assets/photos/literary-showcase.webp" alt="Literary showcase poster for My Blue Rubber Slippers" width="960" height="1200" loading="lazy"></div><div class="col-sm-6 col-lg-4"><img src="/assets/photos/editorial-display.webp" alt="Stack of My Blue Rubber Slippers books against a lavender and turquoise background" width="853" height="1280" loading="lazy"></div></div></div></section>`],
   ['/journal/', 'Journal | Essays & Ideas by Phillipa Aidoo', 'Read Phillipa Aidoo’s essays on personal branding, identity, faith and authority, with links to her published writing.', grid(
@@ -150,7 +156,7 @@ for (const [path,title,description,body,heading,intro] of pages) {
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/landi/bootstrap.min.css">
 <link rel="stylesheet" href="/assets/landi/bootstrap-icons.css">
 <link rel="stylesheet" href="/assets/landi/main.css">

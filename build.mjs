@@ -46,7 +46,7 @@ const feature = `<section class="book-feature"><div>${cover}</div><div><p class=
 const pages = [
   ['/', 'Phillipa Aidoo — Founder, Developer, Strategist & Author', 'Meet Phillipa Aidoo, founder of ALLMORROW, co-founder and COO of WOMATE, software developer, digital strategist and author of My Blue Rubber Slippers.', `
     ${homeHero(bookPath,bookName)}
-    ${workTabs()}
+    ${workTabs(womate)}
     <div class="container">${feature}</div>
     <section class="call-to-action section"><div class="container"><div class="row content justify-content-center align-items-center position-relative"><div class="col-lg-8 mx-auto text-center">
     <h2 class="display-4 mb-4">Let’s talk</h2><p class="mb-4">I’d love to hear what you’re working on or what stayed with you after reading the book.</p>${link('/contact/','Get in touch','btn btn-cta')}

@@ -76,7 +76,7 @@ export function homeHero(bookPath, bookName) {
   </section>`;
 }
 
-export function workTabs() {
+export function workTabs(womate) {
   const tabs = [
     ['technology','Technology','Software and digital strategy','I build software at ALLMORROW, including CIRQUVO and handEwork. At Grow-Online Agency, I work with businesses on their websites, social media and how they reach customers online.','/portfolio/','Explore the portfolio','code-square'],
     ['climate','Climate','Climate leadership at WOMATE','I designed the technology behind WOMATE’s climate leadership work. As COO, I shape the organisation’s direction and build the systems that support its programmes.','/ventures/','Explore the ventures','globe-africa'],
@@ -86,7 +86,7 @@ export function workTabs() {
     <div class="container section-title"><h2>What I do</h2></div>
     <div class="container">
       <div class="d-flex justify-content-center"><ul class="nav nav-tabs" role="tablist">${tabs.map(([id,label],index) => `<li class="nav-item" role="presentation"><button class="nav-link${index === 0 ? ' active' : ''}" id="tab-${id}" type="button" data-bs-toggle="tab" data-bs-target="#panel-${id}" role="tab" aria-controls="panel-${id}" aria-selected="${index === 0}">${label}</button></li>`).join('')}</ul></div>
-      <div class="tab-content">${tabs.map(([id,label,title,description,url,cta,icon],index) => `<div class="tab-pane fade${index === 0 ? ' show active' : ''}" id="panel-${id}" role="tabpanel" aria-labelledby="tab-${id}" tabindex="0"><div class="row align-items-center gy-4"><div class="col-lg-7"><h3>${title}</h3><p>${description}</p><a class="read-more" href="${url}">${cta}</a></div><div class="col-lg-5"><div class="feature-art" aria-hidden="true"><i class="bi bi-${icon}"></i></div></div></div></div>`).join('')}</div>
+      <div class="tab-content">${tabs.map(([id,label,title,description,url,cta,icon],index) => `<div class="tab-pane fade${index === 0 ? ' show active' : ''}" id="panel-${id}" role="tabpanel" aria-labelledby="tab-${id}" tabindex="0"><div class="row align-items-center gy-4"><div class="col-lg-7"><h3>${title}</h3><p>${description}</p><a class="read-more" href="${url}">${cta}</a></div><div class="col-lg-5">${id === "climate" ? `<div class="feature-preview"><iframe title="WOMATE official website" src="${womate}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>` : `<div class="feature-art" aria-hidden="true"><i class="bi bi-${icon}"></i></div>`}</div></div></div>`).join('')}</div>
     </div>
   </section>`;
 }

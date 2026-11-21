@@ -150,3 +150,14 @@ h1, h2, h3 { overflow-wrap: anywhere; }
   .book-feature { margin-block: 1.25rem; }
   .footer .footer-top { padding-top: 2rem; }
 }
+
+.book-reveal { background: #f2edf9; }
+.book-reveal video {
+  display: block;
+  width: auto;
+  max-width: min(100%, 45rem);
+  max-height: min(70svh, 36rem);
+  margin-inline: auto;
+  border-radius: .875rem;
+  background: #281e40;
+}

@@ -106,6 +106,15 @@ const pages = [
       <p>${synopsis}</p>
       <a class="action d-lg-none" href="#buy-editions">Choose an edition</a>
       <section class="sample"><h2>Read a sample</h2><p>Find preview options on the Kindle page.</p>${link(amazon,'Open Kindle listing')}</section></div></div>`)}
+    <section class="section book-reveal" aria-labelledby="book-reveal-title">
+      <div class="container">
+        <div class="section-title"><h2 id="book-reveal-title">Book reveal</h2></div>
+        <video controls playsinline preload="none" width="720" height="900" poster="/assets/photos/blue-rubber-slippers.webp" aria-labelledby="book-reveal-title">
+          <source src="/assets/video/my-blue-rubber-slippers-reveal.mp4" type="video/mp4">
+          <a href="/assets/video/my-blue-rubber-slippers-reveal.mp4">Open the book reveal video</a>
+        </video>
+      </div>
+    </section>
     <section class="section book-gallery"><div class="container"><div class="section-title"><h2>Book artwork</h2></div><div class="row g-4 justify-content-center"><div class="col-sm-6 col-lg-4"><img src="/assets/photos/literary-showcase.webp" alt="Literary showcase poster for My Blue Rubber Slippers" width="960" height="1200" loading="lazy"></div><div class="col-sm-6 col-lg-4"><img src="/assets/photos/editorial-display.webp" alt="Stack of My Blue Rubber Slippers books against a lavender and turquoise background" width="853" height="1280" loading="lazy"></div></div></div></section>`],
   ['/journal/', 'Journal | Essays & Ideas by Phillipa Aidoo', 'Read Phillipa Aidoo’s essays on personal branding, identity, faith and authority, with links to her published writing.', grid(
     card('Identity & creative work','Maybe My Brand Is Being Me','I asked ChatGPT to write me a bio for my very important LinkedIn audience. Then I rewrote it to sound like me.',essay,'Read the essay'),
@@ -180,3 +189,4 @@ mkdirSync('dist/assets', {recursive:true});
 for (const asset of ['site.css','favicon.svg','site.js']) copyFileSync('assets/'+asset,'dist/assets/'+asset);
 cpSync('assets/landi','dist/assets/landi',{recursive:true});
 cpSync('assets/photos','dist/assets/photos',{recursive:true});
+cpSync('assets/video','dist/assets/video',{recursive:true});

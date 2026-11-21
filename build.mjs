@@ -87,7 +87,7 @@ const pages = [
             <p>An ALLMORROW platform for sending personal letters, voice notes and keepsakes.</p>
             ${link(mwahli,'Visit MWAHLI')}
           </div>
-          <div class="col-lg-5">${projectPreview(mwahli,'MWAHLI','mwahli',651)}</div>
+          <div class="col-lg-5">${projectPreview(mwahli,'MWAHLI','mwahli',508)}</div>
         </div>
       </div>
     </section>` + grid(

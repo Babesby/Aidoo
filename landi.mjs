@@ -60,7 +60,7 @@ export function homeHero(bookPath, bookName) {
         <div class="col-lg-6"><div class="hero-content">
           <div class="company-badge mb-4"><i class="bi bi-geo-alt me-2" aria-hidden="true"></i> Accra, Ghana</div>
           <h1 class="mb-4">Phillipa <span class="accent-text">Aidoo</span></h1>
-          <p class="manifesto mb-3">I build software and write fiction.</p>
+          <p class="manifesto mb-3">I build things. I write things.<br>Occasionally, I question everything.</p>
           <p class="mb-4">I founded ALLMORROW and lead strategy and software development at WOMATE. In my first novel, I imagined a country where only the rich can afford to be poor.</p>
           <div class="hero-buttons"><a href="/portfolio/" class="btn btn-primary me-2">See my work</a><a href="${bookPath}" class="btn btn-link"><i class="bi bi-book me-1" aria-hidden="true"></i> Meet my debut novel</a></div>
         </div></div>

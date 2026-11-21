@@ -1,6 +1,6 @@
 # Phillipa Aidoo
 
-Multipage professional profile and author website. The responsive grid comes from the Landi template in the original workspace. The layout, visual identity and content were customised for Phillipa.
+Multipage professional profile and author website. The original Landi stylesheet and Bootstrap components power the floating navigation, split hero, role cards, feature tabs, service cards, page titles, breadcrumbs and details sidebar. Personalised styles are in assets/site.css and shared component markup is in landi.mjs.
 
 ## Build and preview
 

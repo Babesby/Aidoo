@@ -90,10 +90,15 @@
 .hero .customers-badge { background: #fbf9ff; }
 .hero .stats-row { background: #fbf9ff; }
 
-.project-preview { padding: 1.25rem; border: 1px solid #dcd1ec; border-radius: 1rem; }
-.project-preview h2 { margin-bottom: 1rem; }
-.project-preview-image, .project-preview-image img { display: block; width: 100%; border-radius: .75rem; }
-.project-preview-image img { height: auto; }
-.project-preview iframe { display: block; width: 100%; height: clamp(22rem, 65vh, 40rem); margin-top: 1rem; border: 0; border-radius: .75rem; }
-
-.feature-preview iframe { display: block; width: 100%; height: clamp(22rem, 55vh, 32rem); border: 1px solid #dcd1ec; border-radius: .75rem; }
+.project-preview-image {
+  display: block;
+  width: 100%;
+  max-width: 30rem;
+  margin-inline: auto;
+  border: 1px solid #dcd1ec;
+  border-radius: .85rem;
+  overflow: hidden;
+  box-shadow: 0 .4rem 1.4rem #281e401a;
+}
+.project-preview-image img { display: block; width: 100%; height: auto; }
+.project-preview-image:hover { border-color: var(--accent-color); }

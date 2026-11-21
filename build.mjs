@@ -1,6 +1,6 @@
 import { mkdirSync, writeFileSync, copyFileSync, cpSync } from 'node:fs';
 import { dirname } from 'node:path';
-import { siteHeader, footer, pageTitle, serviceCard as card, serviceGrid as grid, homeHero, workTabs, detailLayout } from './landi.mjs';
+import { siteHeader, footer, pageTitle, serviceCard as card, serviceGrid as grid, homeHero, workTabs, detailLayout, projectPreview } from './landi.mjs';
 
 const origin = new URL(process.env.SITE_URL || 'https://phillipaaidoo.allmorrow.com').origin;
 const mwahli = 'https://mwahli.allmorrow.com/';
@@ -59,31 +59,37 @@ const pages = [
   ['/ventures/', 'Ventures | ALLMORROW, WOMATE & Grow-Online Agency', 'Explore Phillipa Aidoo’s work with ALLMORROW, women’s climate leadership through WOMATE and digital strategy at Grow-Online Agency.', `
     <section class="services section light-background">
       <div class="container">
-        <div class="project-preview">
-          <p class="eyebrow">Co-founder &amp; Chief Operating Officer</p>
-          <h2>WOMATE</h2>
-          <p>As Chief Strategist and Full-stack Developer, I designed WOMATE’s integrated climate-tech ecosystem and shape the organisation’s strategic direction.</p>
-          <iframe title="WOMATE official website" src="${womate}" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-          <p class="mb-0 mt-3">${link(womate,'Open the WOMATE website directly')}</p>
+        <div class="row align-items-center gy-3">
+          <div class="col-lg-7">
+            <p class="eyebrow">Co-founder &amp; Chief Operating Officer</p>
+            <h2>WOMATE</h2>
+            <p>As Chief Strategist and Full-stack Developer, I designed WOMATE’s integrated climate-tech ecosystem and shape the organisation’s strategic direction.</p>
+            ${link(womate,'Visit WOMATE')}
+          </div>
+          <div class="col-lg-5">${projectPreview(womate,'WOMATE','womate',555)}</div>
         </div>
       </div>
     </section>` + grid(
     card('Founder','ALLMORROW','I founded ALLMORROW and build software there, including MWAHLI, CIRQUVO and handEwork.','/portfolio/','Explore the portfolio'),
     card('Digital strategy','Grow-Online Agency','I help businesses decide how to reach customers online, then work on the websites and social media that support that plan.','https://gh.linkedin.com/company/grow-online-agency','Visit Grow-Online Agency')), 'Ventures'],
-  ['/portfolio/', 'Portfolio | Phillipa Aidoo’s Software & Creative Work', 'Selected work and practice areas across Phillipa Aidoo’s software development, digital strategy and artist management.', grid(
+  ['/portfolio/', 'Portfolio | Phillipa Aidoo’s Software & Creative Work', 'Selected work and practice areas across Phillipa Aidoo’s software development, digital strategy and artist management.', `
+    <section class="services section light-background">
+      <div class="container">
+        <div class="row align-items-center gy-3">
+          <div class="col-lg-7">
+            <p class="eyebrow">Software development</p>
+            <h2>MWAHLI</h2>
+            <p>An ALLMORROW platform for sending personal letters, voice notes and keepsakes.</p>
+            ${link(mwahli,'Visit MWAHLI')}
+          </div>
+          <div class="col-lg-5">${projectPreview(mwahli,'MWAHLI','mwahli',651)}</div>
+        </div>
+      </div>
+    </section>` + grid(
     card('Software development','CIRQUVO','In development at ALLMORROW.'),
-    card('Software development','MWAHLI','An ALLMORROW platform for sending personal letters, voice notes and keepsakes.',mwahli,'Visit MWAHLI'),
     card('Software development','handEwork','A software project at ALLMORROW.'),
     card('Digital strategy','Web & brand strategy','At Grow-Online Agency, I develop websites and plan how businesses show up across their online channels.','/ventures/','About Grow-Online Agency'),
-    card('Creative industries','Artist management','I’ve worked in music and artist management. Get in touch if you have a music or artist project in mind.','/contact/','Discuss a project')) + `
-    <section class="container pb-5">
-      <div class="project-preview">
-        <h2>MWAHLI homepage</h2>
-        <a class="project-preview-image" href="${mwahli}" aria-label="Open the MWAHLI website">
-          <img src="/assets/photos/mwahli-homepage.webp" width="1440" height="900" alt="Preview of the MWAHLI homepage, with the headline Love, made intentional." loading="lazy">
-        </a>
-      </div>
-    </section>`, 'Selected work'],
+    card('Creative industries','Artist management','I’ve worked in music and artist management. Get in touch if you have a music or artist project in mind.','/contact/','Discuss a project')), 'Selected work'],
   ['/books/', 'Books by Phillipa Aidoo | Fiction & New Releases', 'Discover books by Phillipa Aidoo, starting with her debut novel My Blue Rubber Slippers, available on Kindle.', '<div class="container">' + feature + '</div>', 'Books'],
   [bookPath, 'My Blue Rubber Slippers | A Novel by Phillipa Aidoo', 'In Phillipa Aidoo’s debut novel, everyone in Arcca has a fortune. Then Abena arrives in blue rubber slippers and upsets the price of everything.', `
     ${detailLayout(

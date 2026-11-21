@@ -2,14 +2,16 @@
   --default-font: "Manrope", system-ui, sans-serif;
   --heading-font: "Instrument Serif", Georgia, serif;
   --nav-font: "Manrope", system-ui, sans-serif;
-  --background-color: #fffdf9;
+  --background-color: #fbf9ff;
+  --butter: #ffe79a;
+  --lavender: #493674;
   --default-color: #33262e;
-  --heading-color: #2d1624;
-  --accent-color: #741d3b;
-  --nav-hover-color: #741d3b;
-  --nav-dropdown-hover-color: #741d3b;
+  --heading-color: #281e40;
+  --accent-color: #493674;
+  --nav-hover-color: #493674;
+  --nav-dropdown-hover-color: #493674;
 }
-.light-background { --background-color: #fcf4f4; --surface-color: #fffdf9; }
+.light-background { --background-color: #f2edf9; --surface-color: #fbf9ff; }
 .header .logo .sitename, .footer .logo .sitename { font: 400 2rem/1 var(--heading-font); white-space: nowrap; color: var(--heading-color); }
 .logo .sitename span { color: var(--accent-color); }
 .header .navmenu a { font-weight: 700; }
@@ -18,17 +20,8 @@
 .hero .hero-content h1 { font: 400 clamp(4rem, 9vw, 8rem)/.92 var(--heading-font); letter-spacing: -.04em; }
 .hero .hero-content .manifesto { font: 400 clamp(1.5rem, 3vw, 2.5rem)/1.15 var(--heading-font); }
 .hero .hero-content p { max-width: 49ch; }
-.monogram {
-  background: radial-gradient(ellipse at 70% 18%, #a84163, #741d3b 47%, #361225);
-  color: #fff2e6;
-  display: grid;
-  place-items: center;
-  border-radius: 2.5rem;
-  min-height: clamp(15rem, 31vw, 26rem);
-  font: 400 clamp(9rem, 22vw, 18rem)/.85 var(--heading-font);
-  overflow: hidden;
-}
-.monogram i { color: #f6adb8; }
+.author-photo { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 2rem; }
+.hero .hero-image .hero-photo { max-width: 29rem; margin-inline: auto; }
 .hero .customers-badge { text-align: left; bottom: 1.2rem; right: 1.2rem; }
 .hero .customers-badge a { font-size: 1rem; font-weight: 800; }
 .hero .stat-item { color: var(--default-color); }
@@ -38,7 +31,7 @@
 .services .service-card h3 { font-size: 2.1rem; }
 .section-title h2, .features .tab-content h3 { font-weight: 400; font-size: clamp(2.35rem, 5vw, 4.25rem); }
 .features .nav-tabs .nav-link { font-weight: 800; }
-.feature-art { display: grid; place-items: center; min-height: 12rem; background: #f6e9ee; border-radius: 1.5rem; color: var(--accent-color); font-size: 5rem; }
+.feature-art { display: grid; place-items: center; min-height: 12rem; background: #eee6fa; border-radius: 1.5rem; color: var(--accent-color); font-size: 5rem; }
 .page-title h1 { font: 400 clamp(3rem, 7vw, 5rem)/1 var(--heading-font); }
 .page-intro { margin: 1rem 0 0; max-width: 65ch; }
 .prose { font-size: 1.1rem; }
@@ -55,12 +48,11 @@
 .book-feature.detail { margin: 0; }
 .book-feature h2 { font: 400 clamp(2.5rem, 5vw, 4.75rem)/1 var(--heading-font); }
 .book-feature blockquote { font: 400 clamp(1.7rem, 3vw, 2.6rem)/1.05 var(--heading-font); color: #26255d; margin: .75rem 0 1.25rem; }
-.book-art { max-width: 15rem; aspect-ratio: 2/3; margin: auto; padding: 1rem; display: flex; flex-direction: column; justify-content: space-between; color: white; background: linear-gradient(145deg,#485ad7,#171d6c); border-left: .35rem solid #98a7fa; box-shadow: .6rem .6rem #c8c5e3; }
-.book-art strong { font: 400 clamp(2.45rem, 5vw, 4.2rem)/.9 var(--heading-font); }
-.book-art span { font-size: .8rem; font-weight: 800; letter-spacing: .12em; }
+.book-art { display: block; width: 100%; max-width: 18rem; height: auto; margin: auto; border-radius: .75rem; }
+.book-gallery img { display: block; width: 100%; height: auto; border-radius: .75rem; }
 .sample h2 { font-size: 2rem; }
 .action { display: inline-block; padding: .6rem 1.1rem; border-radius: 2rem; background: var(--accent-color); color: white; font-weight: 700; }
-.action:hover { background: #49142a; color: white; }
+.action:hover { background: #35254f; color: white; }
 .text-link { font-weight: 800; }
 .help-box a { text-decoration: underline; }
 .skip { position: fixed; inset: .5rem auto auto .5rem; transform: translateY(-160%); padding: .5rem 1rem; z-index: 10000; background: white; }
@@ -72,3 +64,28 @@
   .hero .customers-badge { display: block; right: .75rem; bottom: .75rem; max-width: calc(100% - 1.5rem); }
   .hero .hero-content .manifesto, .hero .hero-content p { margin-inline: auto; }
 }
+
+.hero, .call-to-action, .service-details .help-box {
+  --background-color: var(--lavender);
+  --default-color: #fff8ff;
+  --heading-color: #fff8ff;
+  --accent-color: var(--butter);
+  --contrast-color: #281e40;
+}
+.hero::before { background: linear-gradient(135deg, #39265f, #5c478a); }
+.hero .hero-content .company-badge, .hero .hero-content .accent-text { color: var(--butter); }
+.hero .hero-content .company-badge { background: #33234f; }
+.hero .hero-content .btn-link, .hero .hero-content .btn-link:hover { color: var(--butter); }
+.hero .hero-content .btn-primary, .call-to-action .btn-cta {
+  background: var(--butter);
+  color: #281e40;
+  border-color: var(--butter);
+}
+.hero .hero-content .btn-primary:hover, .call-to-action .btn-cta:hover { background: #fff2bb; color: #281e40; }
+.hero .stats-row, .hero .customers-badge {
+  --default-color: #33262e;
+  --accent-color: var(--lavender);
+  --surface-color: #fbf9ff;
+}
+.hero .customers-badge { background: #fbf9ff; }
+.hero .stats-row { background: #fbf9ff; }

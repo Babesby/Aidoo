@@ -11,12 +11,12 @@ const bookPath = '/books/my-blue-rubber-slippers/';
 const bookName = 'My Blue Rubber Slippers';
 const line = 'Everyone is rich. Only the elite can afford to be poor.';
 const author = 'Phillipa Aidoo';
-const person = {'@type':'Person','@id':origin+'/#phillipa-aidoo',name:author,url:origin+'/',sameAs:[linkedin],jobTitle:['Author','Software Developer','Digital Strategist'],worksFor:[{'@type':'Organization',name:'ALLMORROW'},{'@type':'Organization',name:'WOMATE',sameAs:'https://www.linkedin.com/company/womeninclimategh'},{'@type':'Organization',name:'Grow-Online Agency',sameAs:'https://gh.linkedin.com/company/grow-online-agency'}]};
-const book = {'@type':'Book','@id':origin+bookPath+'#book',name:bookName,url:origin+bookPath,author:{'@id':person['@id']},bookFormat:'https://schema.org/EBook',sameAs:[amazon],inLanguage:'en',description:line};
+const person = {'@type':'Person','@id':origin+'/#phillipa-aidoo',name:author,url:origin+'/',image:origin+'/assets/photos/phillipa-portrait.webp',sameAs:[linkedin],jobTitle:['Author','Software Developer','Digital Strategist','Chief Operating Officer at WOMATE'],worksFor:[{'@type':'Organization',name:'ALLMORROW'},{'@type':'Organization',name:'WOMATE',sameAs:'https://www.linkedin.com/company/womeninclimategh'},{'@type':'Organization',name:'Grow-Online Agency',sameAs:'https://gh.linkedin.com/company/grow-online-agency'}]};
+const book = {'@type':'Book','@id':origin+bookPath+'#book',name:bookName,url:origin+bookPath,image:origin+'/assets/photos/blue-rubber-slippers.webp',author:{'@id':person['@id']},bookFormat:'https://schema.org/EBook',sameAs:[amazon],inLanguage:'en',description:line};
 const nav = [['/about/','About'],['/ventures/','Ventures'],['/portfolio/','Portfolio'],['/books/','Books'],['/journal/','Journal'],['/press/','Press'],['/contact/','Contact']];
 const link = (url,label,style='text-link') => `<a class="${style}" href="${url}">${label}</a>`;
 const button = 'action';
-const cover = `<div class="book-art" aria-hidden="true"><span>A NOVEL</span><strong>My Blue<br>Rubber<br><i>Slippers</i></strong><span>PHILLIPA AIDOO</span></div>`;
+const cover = `<img class="book-art" src="/assets/photos/blue-rubber-slippers.webp" alt="My Blue Rubber Slippers cover featuring blue slippers in a glass display case" width="960" height="1200" loading="lazy">`;
 const feature = `<section class="book-feature"><div>${cover}</div><div><p class="label">Debut novel</p><h2>${bookName}</h2><blockquote>${line}</blockquote>${link(bookPath,'Explore the novel',button)}</div></section>`;
 const pages = [
   ['/', 'Phillipa Aidoo | Founder, Developer & Author', 'Official website of Phillipa Aidoo, founder of ALLMORROW, co-founder of WOMATE, digital strategist, software developer and author of My Blue Rubber Slippers.', `
@@ -27,13 +27,13 @@ const pages = [
     <h2 class="display-4 mb-4">Let’s talk</h2><p class="mb-4">For projects, interviews and notes from readers.</p>${link('/contact/','Get in touch','btn btn-cta')}
     </div></div></div></section>`],
   ['/about/', 'About Phillipa Aidoo | Biography & Background', 'Read about Phillipa Aidoo’s work in software development, digital strategy, women’s climate leadership, the creative industries and fiction.', `
-    <section class="about section"><div class="container"><div class="row align-items-center gy-4"><div class="col-lg-7 prose"><p>Phillipa Aidoo is a Ghanaian founder, software developer, digital strategist and author. She founded ALLMORROW and co-founded WOMATE (Women in Climate), an initiative connecting women with climate leadership, learning and community.</p>
+    <section class="about section"><div class="container"><div class="row align-items-center gy-4"><div class="col-lg-7 prose"><p>Phillipa Aidoo is a Ghanaian founder, software developer, digital strategist and author. She founded ALLMORROW and co-founded WOMATE (Women in Climate), where she serves as Chief Operating Officer, Chief Strategist and Full-stack Developer. She designed WOMATE’s integrated climate-tech ecosystem and shapes the organisation’s strategic direction.</p>
     <p>Her background includes the Ghana Institute of Journalism and work in web development and digital strategy through Grow-Online Agency. Her creative experience spans music, artist management and writing.</p>
     <p>Her debut novel is <a href="${bookPath}"><em>${bookName}</em></a>. In her nonfiction, she writes about authority, spirituality and identity, with a particular interest in the assumptions people inherit and the voices that get heard.</p>
-    ${link(linkedin,'Find Phillipa on LinkedIn',button)}</div><div class="col-lg-5"><div class="monogram" aria-hidden="true"><span>P<i>a.</i></span></div></div></div></div></section>`, 'About me', 'Founder, developer, digital strategist and author based in Accra, Ghana.'],
+    ${link(linkedin,'Find Phillipa on LinkedIn',button)}</div><div class="col-lg-5"><img class="author-photo img-fluid" src="/assets/photos/phillipa-portrait.webp" alt="Professional portrait of Phillipa Aidoo" width="960" height="960"></div></div></div></section>`, 'About me', 'Founder, developer, digital strategist and author based in Accra, Ghana.'],
   ['/ventures/', 'Ventures | ALLMORROW, WOMATE & Grow-Online Agency', 'Explore Phillipa Aidoo’s work with ALLMORROW, women’s climate leadership through WOMATE and digital strategy at Grow-Online Agency.', grid(
     card('Founder','ALLMORROW','My technology venture and the home of my software projects, including CIRQUVO and handEwork.','/portfolio/','Explore the portfolio'),
-    card('Co-founder','WOMATE','Women in Climate brings together training, mentorship and community to support women’s leadership in climate action.','https://www.linkedin.com/company/womeninclimategh','Visit WOMATE'),
+    card('Co-founder &amp; Chief Operating Officer','WOMATE','As Chief Strategist and Full-stack Developer, I designed WOMATE’s integrated climate-tech ecosystem and shape the organisation’s strategic direction.','https://www.linkedin.com/company/womeninclimategh','Visit WOMATE'),
     card('Digital strategy','Grow-Online Agency','My work with GoA spans digital strategy, web development, social media and brand visibility.','https://gh.linkedin.com/company/grow-online-agency','Visit Grow-Online Agency')), 'Ventures', 'Technology, digital strategy and women’s climate leadership.'],
   ['/portfolio/', 'Portfolio | Phillipa Aidoo’s Software & Creative Work', 'Selected work and practice areas across Phillipa Aidoo’s software development, digital strategy and artist management.', grid(
     card('Software development','CIRQUVO','A software project I’m building through ALLMORROW.'),
@@ -48,8 +48,9 @@ const pages = [
       <a href="${amazon}#customerReviews"><i class="bi bi-chat" aria-hidden="true"></i><span>Reader reviews on Amazon</span></a></div></div>
       <div class="help-box d-flex flex-column justify-content-center align-items-center"><h4>Book enquiries</h4><a href="/contact/">Contact Phillipa</a></div>`,
       `<div class="book-feature detail"><div>${cover}</div><div><p class="eyebrow">Debut novel</p><blockquote>${line}</blockquote>
-      <p>My debut novel starts from a question about wealth and status. What would it take for poverty itself to become a luxury?</p>
-      <section class="sample"><h2>Read a sample</h2><p>Check the Kindle listing for Amazon’s sample and preview options.</p>${link(amazon,'Open Kindle listing')}</section></div></div>`)}`],
+      <p>In Arcca, everybody owns a fortune. Poverty is a privilege and a market. Then Abena arrives in blue rubber slippers and upsets the price of everything.</p>
+      <section class="sample"><h2>Read a sample</h2><p>Check the Kindle listing for Amazon’s sample and preview options.</p>${link(amazon,'Open Kindle listing')}</section></div></div>`)}
+    <section class="section book-gallery"><div class="container"><div class="section-title"><h2>Book artwork</h2></div><div class="row g-4 justify-content-center"><div class="col-sm-6 col-lg-4"><img src="/assets/photos/literary-showcase.webp" alt="Literary showcase poster for My Blue Rubber Slippers" width="960" height="1200" loading="lazy"></div><div class="col-sm-6 col-lg-4"><img src="/assets/photos/editorial-display.webp" alt="Stack of My Blue Rubber Slippers books against a lavender and turquoise background" width="853" height="1280" loading="lazy"></div></div></div></section>`],
   ['/journal/', 'Journal | Essays & Ideas by Phillipa Aidoo', 'Read Phillipa Aidoo’s essays on personal branding, identity, faith and authority, with links to her published writing.', grid(
     card('Identity & creative work','Maybe My Brand Is Being Me','A funny, candid look at personal branding and the pressure to sound polished online.',essay,'Read the essay'),
     card('Faith & society','The Illusion of Authority','A reflection on the idea of dominion and what it asks us to accept about who gets to have power.',linkedin+'#articles','Browse published essays')), 'Journal', 'Essays and reflections on identity, faith, authority and making things.'],
@@ -94,6 +95,7 @@ for (const [path,title,description,body,heading,intro] of pages) {
 <meta property="og:description" content="${escapeHtml(description)}">
 <meta property="og:site_name" content="Phillipa Aidoo">
 <meta property="og:url" content="${canonical}">
+<meta property="og:image" content="${origin}/assets/photos/${path.startsWith('/books/') ? 'blue-rubber-slippers' : 'phillipa-portrait'}.webp">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -121,3 +123,4 @@ output('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="ht
 mkdirSync('dist/assets', {recursive:true});
 for (const asset of ['site.css','favicon.svg','site.js']) copyFileSync('assets/'+asset,'dist/assets/'+asset);
 cpSync('assets/landi','dist/assets/landi',{recursive:true});
+cpSync('assets/photos','dist/assets/photos',{recursive:true});

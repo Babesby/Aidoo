@@ -50,7 +50,7 @@ export function serviceGrid(...cards) {
 export function homeHero(bookPath, bookName) {
   const roles = [
     ['code-slash','ALLMORROW','Founder','/ventures/'],
-    ['globe-africa','WOMATE','Co-founder','/ventures/'],
+    ['globe-africa','WOMATE','Co-founder &amp; COO','/ventures/'],
     ['window','Grow-Online Agency','Digital strategy','/portfolio/'],
     ['book','Fiction & essays','Author','/books/'],
   ];
@@ -65,7 +65,7 @@ export function homeHero(bookPath, bookName) {
           <div class="hero-buttons"><a href="/portfolio/" class="btn btn-primary me-2">Explore my work</a><a href="/books/" class="btn btn-link"><i class="bi bi-book me-1" aria-hidden="true"></i> Browse my books</a></div>
         </div></div>
         <div class="col-lg-6"><div class="hero-image">
-          <div class="monogram" aria-hidden="true"><span>P<i>a.</i></span></div>
+          <img class="author-photo hero-photo img-fluid" src="/assets/photos/phillipa-hero.webp" alt="Phillipa Aidoo in a patterned pink dress" width="960" height="960" fetchpriority="high">
           <div class="customers-badge"><p class="mb-1 eyebrow">Debut novel</p><a href="${bookPath}">${bookName}</a></div>
         </div></div>
       </div>
@@ -79,7 +79,7 @@ export function homeHero(bookPath, bookName) {
 export function workTabs() {
   const tabs = [
     ['technology','Technology','Building software and digital experiences','My work at ALLMORROW includes CIRQUVO and handEwork. Through Grow-Online Agency I work across web development, digital strategy and brand visibility.','/portfolio/','Explore the portfolio','code-square'],
-    ['climate','Climate','Supporting women in climate leadership','At WOMATE, I help connect women with training, mentorship and a community working on climate action.','/ventures/','Explore the ventures','globe-africa'],
+    ['climate','Climate','Supporting women in climate leadership','As WOMATE’s COO, Chief Strategist and Full-stack Developer, I shape its strategy and build its integrated climate-tech ecosystem.','/ventures/','Explore the ventures','globe-africa'],
     ['writing','Writing','Fiction, essays and inconvenient questions','My debut novel is My Blue Rubber Slippers. In my essays, I write about faith, identity, authority and the pressure to sound polished online.','/journal/','Read the journal','pen'],
   ];
   return `<section id="features" class="features section">

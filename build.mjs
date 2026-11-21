@@ -3,6 +3,8 @@ import { dirname } from 'node:path';
 import { siteHeader, footer, pageTitle, serviceCard as card, serviceGrid as grid, homeHero, workTabs, detailLayout } from './landi.mjs';
 
 const origin = new URL(process.env.SITE_URL || 'https://phillipaaidoo.allmorrow.com').origin;
+const mwahli = 'https://mwahli.allmorrow.com/';
+const womate = 'https://www.womate.org/';
 const linkedin = 'https://gh.linkedin.com/in/phillipa-aidoo';
 const amazon = 'https://www.amazon.com/dp/B0HSFRWVTC';
 const essay = 'https://www.linkedin.com/pulse/maybe-my-brand-being-me-phillipa-aidoo-rtk1e';
@@ -17,7 +19,7 @@ const entity = (id) => ({'@id':id});
 const personId = origin+'/#phillipa-aidoo';
 const organizations = [
   {'@type':'Organization','@id':origin+'/ventures/#allmorrow',name:'ALLMORROW',founder:entity(personId)},
-  {'@type':'Organization','@id':origin+'/ventures/#womate',name:'WOMATE',alternateName:'Women in Climate',sameAs:'https://www.linkedin.com/company/womeninclimategh',founder:entity(personId)},
+  {'@type':'Organization','@id':origin+'/ventures/#womate',name:'WOMATE',alternateName:'Women in Climate',url:womate,sameAs:'https://www.linkedin.com/company/womeninclimategh',founder:entity(personId)},
   {'@type':'Organization','@id':origin+'/ventures/#grow-online-agency',name:'Grow-Online Agency',sameAs:'https://gh.linkedin.com/company/grow-online-agency'},
 ];
 const person = {
@@ -55,11 +57,19 @@ const pages = [
     <p>My debut novel, <a href="${bookPath}"><em>${bookName}</em></a>, takes place in a country where poverty is a privilege. I also write essays about faith, who gets to exercise authority and the versions of ourselves we put online.</p>
     ${link(linkedin,'Find Phillipa on LinkedIn',button)}</div><div class="col-lg-5"><img class="author-photo img-fluid" src="/assets/photos/phillipa-portrait.webp" alt="Professional portrait of Phillipa Aidoo" width="960" height="960"></div></div></div></section>`, 'About Phillipa', 'I’m a founder, developer and writer based in Accra, Ghana.'],
   ['/ventures/', 'Ventures | ALLMORROW, WOMATE & Grow-Online Agency', 'Explore Phillipa Aidoo’s work with ALLMORROW, women’s climate leadership through WOMATE and digital strategy at Grow-Online Agency.', grid(
-    card('Founder','ALLMORROW','I founded ALLMORROW and build software there, including CIRQUVO and handEwork.','/portfolio/','Explore the portfolio'),
-    card('Co-founder &amp; Chief Operating Officer','WOMATE','As Chief Strategist and Full-stack Developer, I designed WOMATE’s integrated climate-tech ecosystem and shape the organisation’s strategic direction.','https://www.linkedin.com/company/womeninclimategh','Visit WOMATE'),
-    card('Digital strategy','Grow-Online Agency','I help businesses decide how to reach customers online, then work on the websites and social media that support that plan.','https://gh.linkedin.com/company/grow-online-agency','Visit Grow-Online Agency')), 'Ventures'],
+    card('Founder','ALLMORROW','I founded ALLMORROW and build software there, including MWAHLI, CIRQUVO and handEwork.','/portfolio/','Explore the portfolio'),
+    card('Co-founder &amp; Chief Operating Officer','WOMATE','As Chief Strategist and Full-stack Developer, I designed WOMATE’s integrated climate-tech ecosystem and shape the organisation’s strategic direction.',womate,'Visit WOMATE'),
+    card('Digital strategy','Grow-Online Agency','I help businesses decide how to reach customers online, then work on the websites and social media that support that plan.','https://gh.linkedin.com/company/grow-online-agency','Visit Grow-Online Agency')) + `
+    <section class="container pb-5">
+      <details class="project-preview">
+        <summary>Preview the WOMATE website</summary>
+        <iframe title="WOMATE official website" src="${womate}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <p class="mb-0 mt-3">${link(womate,'Open the WOMATE website directly')}</p>
+      </details>
+    </section>`, 'Ventures'],
   ['/portfolio/', 'Portfolio | Phillipa Aidoo’s Software & Creative Work', 'Selected work and practice areas across Phillipa Aidoo’s software development, digital strategy and artist management.', grid(
     card('Software development','CIRQUVO','In development at ALLMORROW.'),
+    card('Software development','MWAHLI','An ALLMORROW platform for sending personal letters, voice notes and keepsakes.',mwahli,'Visit MWAHLI'),
     card('Software development','handEwork','A software project at ALLMORROW.'),
     card('Digital strategy','Web & brand strategy','At Grow-Online Agency, I develop websites and plan how businesses show up across their online channels.','/ventures/','About Grow-Online Agency'),
     card('Creative industries','Artist management','I’ve worked in music and artist management. Get in touch if you have a music or artist project in mind.','/contact/','Discuss a project')), 'Selected work'],

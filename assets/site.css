@@ -89,3 +89,7 @@
 }
 .hero .customers-badge { background: #fbf9ff; }
 .hero .stats-row { background: #fbf9ff; }
+
+.project-preview { padding: 1.25rem; border: 1px solid #dcd1ec; border-radius: 1rem; }
+.project-preview summary { color: var(--accent-color); font-weight: 800; cursor: pointer; }
+.project-preview iframe { display: block; width: 100%; height: clamp(22rem, 65vh, 40rem); margin-top: 1rem; border: 0; border-radius: .75rem; }

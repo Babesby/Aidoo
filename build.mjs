@@ -56,17 +56,20 @@ const pages = [
     <p>I founded ALLMORROW to build software and work with businesses on their websites and digital strategy through Grow-Online Agency. I also co-founded WOMATE (Women in Climate), where I’m Chief Operating Officer, Chief Strategist and Full-stack Developer. I designed its integrated climate-tech ecosystem and help set the organisation’s direction.</p>
     <p>My debut novel, <a href="${bookPath}"><em>${bookName}</em></a>, takes place in a country where poverty is a privilege. I also write essays about faith, who gets to exercise authority and the versions of ourselves we put online.</p>
     ${link(linkedin,'Find Phillipa on LinkedIn',button)}</div><div class="col-lg-5"><img class="author-photo img-fluid" src="/assets/photos/phillipa-portrait.webp" alt="Professional portrait of Phillipa Aidoo" width="960" height="960"></div></div></div></section>`, 'About Phillipa', 'I’m a founder, developer and writer based in Accra, Ghana.'],
-  ['/ventures/', 'Ventures | ALLMORROW, WOMATE & Grow-Online Agency', 'Explore Phillipa Aidoo’s work with ALLMORROW, women’s climate leadership through WOMATE and digital strategy at Grow-Online Agency.', grid(
-    card('Founder','ALLMORROW','I founded ALLMORROW and build software there, including MWAHLI, CIRQUVO and handEwork.','/portfolio/','Explore the portfolio'),
-    card('Co-founder &amp; Chief Operating Officer','WOMATE','As Chief Strategist and Full-stack Developer, I designed WOMATE’s integrated climate-tech ecosystem and shape the organisation’s strategic direction.',womate,'Visit WOMATE'),
-    card('Digital strategy','Grow-Online Agency','I help businesses decide how to reach customers online, then work on the websites and social media that support that plan.','https://gh.linkedin.com/company/grow-online-agency','Visit Grow-Online Agency')) + `
-    <section class="container pb-5">
-      <div class="project-preview">
-        <h2>WOMATE website</h2>
-        <iframe title="WOMATE official website" src="${womate}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        <p class="mb-0 mt-3">${link(womate,'Open the WOMATE website directly')}</p>
+  ['/ventures/', 'Ventures | ALLMORROW, WOMATE & Grow-Online Agency', 'Explore Phillipa Aidoo’s work with ALLMORROW, women’s climate leadership through WOMATE and digital strategy at Grow-Online Agency.', `
+    <section class="services section light-background">
+      <div class="container">
+        <div class="project-preview">
+          <p class="eyebrow">Co-founder &amp; Chief Operating Officer</p>
+          <h2>WOMATE</h2>
+          <p>As Chief Strategist and Full-stack Developer, I designed WOMATE’s integrated climate-tech ecosystem and shape the organisation’s strategic direction.</p>
+          <iframe title="WOMATE official website" src="${womate}" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <p class="mb-0 mt-3">${link(womate,'Open the WOMATE website directly')}</p>
+        </div>
       </div>
-    </section>`, 'Ventures'],
+    </section>` + grid(
+    card('Founder','ALLMORROW','I founded ALLMORROW and build software there, including MWAHLI, CIRQUVO and handEwork.','/portfolio/','Explore the portfolio'),
+    card('Digital strategy','Grow-Online Agency','I help businesses decide how to reach customers online, then work on the websites and social media that support that plan.','https://gh.linkedin.com/company/grow-online-agency','Visit Grow-Online Agency')), 'Ventures'],
   ['/portfolio/', 'Portfolio | Phillipa Aidoo’s Software & Creative Work', 'Selected work and practice areas across Phillipa Aidoo’s software development, digital strategy and artist management.', grid(
     card('Software development','CIRQUVO','In development at ALLMORROW.'),
     card('Software development','MWAHLI','An ALLMORROW platform for sending personal letters, voice notes and keepsakes.',mwahli,'Visit MWAHLI'),

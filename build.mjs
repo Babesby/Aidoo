@@ -11,8 +11,31 @@ const bookPath = '/books/my-blue-rubber-slippers/';
 const bookName = 'My Blue Rubber Slippers';
 const line = 'Everyone is rich. Only the elite can afford to be poor.';
 const author = 'Phillipa Aidoo';
-const person = {'@type':'Person','@id':origin+'/#phillipa-aidoo',name:author,url:origin+'/',image:origin+'/assets/photos/phillipa-portrait.webp',sameAs:[linkedin],jobTitle:['Author','Software Developer','Digital Strategist','Chief Operating Officer at WOMATE'],worksFor:[{'@type':'Organization',name:'ALLMORROW'},{'@type':'Organization',name:'WOMATE',sameAs:'https://www.linkedin.com/company/womeninclimategh'},{'@type':'Organization',name:'Grow-Online Agency',sameAs:'https://gh.linkedin.com/company/grow-online-agency'}]};
-const book = {'@type':'Book','@id':origin+bookPath+'#book',name:bookName,url:origin+bookPath,image:origin+'/assets/photos/blue-rubber-slippers.webp',author:{'@id':person['@id']},bookFormat:'https://schema.org/EBook',sameAs:[amazon],inLanguage:'en',description:line};
+const bookGenre = 'Speculative fiction';
+const synopsis = 'In Arcca, everybody owns a fortune. Poverty is a privilege and a market. Then Abena arrives in blue rubber slippers and upsets the price of everything.';
+const entity = (id) => ({'@id':id});
+const personId = origin+'/#phillipa-aidoo';
+const organizations = [
+  {'@type':'Organization','@id':origin+'/ventures/#allmorrow',name:'ALLMORROW',founder:entity(personId)},
+  {'@type':'Organization','@id':origin+'/ventures/#womate',name:'WOMATE',alternateName:'Women in Climate',sameAs:'https://www.linkedin.com/company/womeninclimategh',founder:entity(personId)},
+  {'@type':'Organization','@id':origin+'/ventures/#grow-online-agency',name:'Grow-Online Agency',sameAs:'https://gh.linkedin.com/company/grow-online-agency'},
+];
+const person = {
+  '@type':'Person','@id':personId,name:author,url:origin+'/',
+  image:origin+'/assets/photos/phillipa-portrait.webp',sameAs:[linkedin],
+  jobTitle:['Founder','Software Developer','Digital Strategist','Author','Chief Operating Officer at WOMATE'],
+  knowsAbout:['Software development','Digital marketing','Climate technology','Fiction writing'],
+  worksFor:organizations.map((organization)=>entity(organization['@id'])),
+};
+const book = {
+  '@type':'Book','@id':origin+bookPath+'#book',name:bookName,url:origin+bookPath,
+  image:origin+'/assets/photos/blue-rubber-slippers.webp',author:entity(personId),
+  genre:bookGenre,inLanguage:'en',description:synopsis,
+  workExample:{
+    '@type':'Book','@id':origin+bookPath+'#kindle-edition',name:bookName,
+    bookFormat:'https://schema.org/EBook',url:amazon,author:entity(personId),
+  },
+};
 const nav = [['/about/','About'],['/ventures/','Ventures'],['/portfolio/','Portfolio'],['/books/','Books'],['/journal/','Journal'],['/press/','Press'],['/contact/','Contact']];
 const link = (url,label,style='text-link') => `<a class="${style}" href="${url}">${label}</a>`;
 const button = 'action';
@@ -44,11 +67,11 @@ const pages = [
   [bookPath, 'My Blue Rubber Slippers | A Novel by Phillipa Aidoo', 'In Phillipa Aidoo’s debut novel, everyone in Arcca has a fortune. Then Abena arrives in blue rubber slippers and upsets the price of everything.', `
     ${detailLayout(
       `<div class="service-box"><h4>Kindle edition</h4><div class="services-list">
-      <a class="active" href="${amazon}"><i class="bi bi-book" aria-hidden="true"></i><span>View Kindle on Amazon</span></a>
+      <a class="active" href="${amazon}"><i class="bi bi-book" aria-hidden="true"></i><span>Buy the Kindle edition on Amazon</span></a>
       <a href="${amazon}#customerReviews"><i class="bi bi-chat" aria-hidden="true"></i><span>Reader reviews on Amazon</span></a></div></div>
       <div class="help-box d-flex flex-column justify-content-center align-items-center"><h4>Book enquiries</h4><a href="/contact/">Contact Phillipa</a></div>`,
-      `<div class="book-feature detail"><div>${cover}</div><div><p class="eyebrow">Debut novel</p><blockquote>${line}</blockquote>
-      <p>In Arcca, everybody owns a fortune. Poverty is a privilege and a market. Then Abena arrives in blue rubber slippers and upsets the price of everything.</p>
+      `<div class="book-feature detail"><div>${cover}</div><div><p class="eyebrow">${bookGenre}</p><p>By <a href="/about/">${author}</a></p><blockquote>${line}</blockquote>
+      <p>${synopsis}</p>
       <section class="sample"><h2>Read a sample</h2><p>Find preview options on the Kindle page.</p>${link(amazon,'Open Kindle listing')}</section></div></div>`)}
     <section class="section book-gallery"><div class="container"><div class="section-title"><h2>Book artwork</h2></div><div class="row g-4 justify-content-center"><div class="col-sm-6 col-lg-4"><img src="/assets/photos/literary-showcase.webp" alt="Literary showcase poster for My Blue Rubber Slippers" width="960" height="1200" loading="lazy"></div><div class="col-sm-6 col-lg-4"><img src="/assets/photos/editorial-display.webp" alt="Stack of My Blue Rubber Slippers books against a lavender and turquoise background" width="853" height="1280" loading="lazy"></div></div></div></section>`],
   ['/journal/', 'Journal | Essays & Ideas by Phillipa Aidoo', 'Read Phillipa Aidoo’s essays on personal branding, identity, faith and authority, with links to her published writing.', grid(
@@ -74,9 +97,9 @@ function output(file, value) {
 for (const [path,title,description,body,heading,intro] of pages) {
   const canonical = origin + path;
   const pageHeading = heading || (path === bookPath ? bookName : '');
-  const graph = [person, {'@type':'WebSite','@id':origin+'/#website',name:author,url:origin+'/',publisher:{'@id':person['@id']}},
-    {'@type': path==='/about/'?'ProfilePage':'WebPage', '@id':canonical+'#page',url:canonical,name:title,description,isPartOf:{'@id':origin+'/#website'},mainEntity:{'@id':path===bookPath?book['@id']:person['@id']}}];
-  if (path===bookPath || path==='/books/') graph.push(book);
+  const graph = [person, ...organizations, {'@type':'WebSite','@id':origin+'/#website',name:author,url:origin+'/',publisher:{'@id':person['@id']}},
+    {'@type': path==='/' || path==='/about/' ? 'ProfilePage' : 'WebPage', '@id':canonical+'#page',url:canonical,name:title,description,isPartOf:{'@id':origin+'/#website'},mainEntity:{'@id':path===bookPath?book['@id']:person['@id']}}];
+  if (path==='/' || path===bookPath || path==='/books/') graph.push(book);
   if (path==='/journal/') graph.push({'@type':'Article',headline:'Maybe My Brand Is Being Me',url:essay,datePublished:'2025-07-12',author:{'@id':person['@id']}});
   if (path!=='/') {
     const trail = [['/','Home'], ...(path===bookPath?[['/books/','Books']]:[]), [path,heading||bookName]];
@@ -105,7 +128,7 @@ for (const [path,title,description,body,heading,intro] of pages) {
 <link rel="stylesheet" href="/assets/landi/bootstrap-icons.css">
 <link rel="stylesheet" href="/assets/landi/main.css">
 <link rel="stylesheet" href="/assets/site.css">
-<script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@graph':graph})}</script>
+<script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@graph':graph}).replaceAll('<','\\u003c')}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>

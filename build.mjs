@@ -2,7 +2,7 @@ import { mkdirSync, writeFileSync, copyFileSync, cpSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { siteHeader, footer, pageTitle, serviceCard as card, serviceGrid as grid, homeHero, workTabs, detailLayout } from './landi.mjs';
 
-const origin = new URL(process.env.SITE_URL || 'https://phillipaaidoo.com').origin;
+const origin = new URL(process.env.SITE_URL || 'https://phillipaaidoo.allmorrow.com').origin;
 const linkedin = 'https://gh.linkedin.com/in/phillipa-aidoo';
 const amazon = 'https://www.amazon.com/dp/B0HSFRWVTC';
 const essay = 'https://www.linkedin.com/pulse/maybe-my-brand-being-me-phillipa-aidoo-rtk1e';

@@ -22,7 +22,7 @@ const line = 'Everyone is rich. Only the elite can afford to be poor.';
 const author = 'Phillipa Aidoo';
 const bookGenre = 'Speculative satire';
 const allmorrowPath = '/ventures/allmorrow/';
-const professionalBio = 'Phillipa Aidoo is a Ghanaian software developer, digital strategist and novelist based in Accra. She founded ALLMORROW and is cofounder and Chief Operating Officer of WOMATE, where she leads strategy and designed the technology behind its climate leadership programmes. My Blue Rubber Slippers is her debut novel.';
+const professionalBio = 'Phillipa Aidoo is a Ghanaian software developer, digital strategist and novelist based in Accra with over a decade of writing experience. She founded ALLMORROW and is cofounder and Chief Operating Officer of WOMATE, where she leads strategy and designed the technology behind its climate leadership programmes. My Blue Rubber Slippers is her debut novel.';
 const image = (file, caption, width, height) => ({
   '@type':'ImageObject','@id':origin+'/assets/photos/'+file+'#image',
   contentUrl:origin+'/assets/photos/'+file,caption,width,height,
@@ -70,7 +70,7 @@ const pages = [
     <h2 class="display-4 mb-4">Let’s talk</h2><p class="mb-4">I’d love to hear what you’re working on or what stayed with you after reading the book.</p>${link('/contact/','Get in touch','btn btn-cta')}
     </div></div></div></section>`],
   ['/about/', 'About Phillipa Aidoo | Biography & Background', 'Read the biography of Phillipa Aidoo, Ghanaian novelist, founder of ALLMORROW and cofounder and COO of WOMATE.', `
-    <section class="about section"><div class="container"><div class="row align-items-center gy-4"><div class="col-lg-7 prose"><p>I’ve been telling stories since I was thirteen. I studied at the Ghana Institute of Journalism, and my creative work has taken me into music, artist management and fiction. African life gives me plenty to write about, especially the things people do that are hard to explain.</p>
+    <section class="about section"><div class="container"><div class="row align-items-center gy-4"><div class="col-lg-7 prose"><p>I’ve spent over a decade writing stories. I studied at the Ghana Institute of Journalism, and my work has taken me into music, artist management and fiction. I draw on African life and keep coming back to the things people do that are hard to explain.</p>
     <p>I founded <a href="${allmorrowPath}">ALLMORROW</a> to build software and work with businesses on their websites and digital strategy through Grow-Online Agency. I also co-founded WOMATE (Women in Climate), where I’m Chief Operating Officer, Chief Strategist and Full-stack Developer. I designed its integrated climate-tech ecosystem and help set the organisation’s direction.</p>
     <p>My debut novel, <a href="${bookPath}"><em>${bookName}</em></a>, takes place in a country where poverty is a privilege. I also write essays about faith, who gets to exercise authority and the versions of ourselves we put online.</p>
     ${link(linkedin,'Find Phillipa on LinkedIn',button)}</div><div class="col-lg-5"><img class="author-photo img-fluid" src="/assets/photos/phillipa-portrait.webp" alt="Professional portrait of Phillipa Aidoo" width="960" height="960"></div></div></div></section>`, 'About Phillipa', 'I’m a Ghanaian novelist, software developer and digital strategist based in Accra.'],
@@ -157,7 +157,7 @@ const pages = [
     </section>
     <section class="section book-gallery"><div class="container"><div class="section-title"><h2>Book artwork</h2></div><div class="row g-4 justify-content-center"><div class="col-sm-6 col-lg-4"><img src="/assets/photos/literary-showcase.webp" alt="Literary showcase poster for My Blue Rubber Slippers" width="960" height="1200" loading="lazy"></div><div class="col-sm-6 col-lg-4"><img src="/assets/photos/editorial-display.webp" alt="Stack of My Blue Rubber Slippers books against a lavender and turquoise background" width="853" height="1280" loading="lazy"></div></div></div></section>`],
   ['/journal/', 'Journal | Essays & Ideas by Phillipa Aidoo', 'Read Phillipa Aidoo’s essays on personal branding, identity, faith and authority, with links to her published writing.', grid(
-    card('Identity & creative work','Maybe My Brand Is Being Me','I asked ChatGPT to write me a bio for my very important LinkedIn audience. Then I rewrote it to sound like me.',essay,'Read the essay'),
+    card('Identity & creative work','Maybe My Brand Is Being Me','I asked ChatGPT to write my LinkedIn bio. Then I rewrote it to sound like me.',essay,'Read the essay'),
     card('Faith & society','The Illusion of Authority','What happens when people take dominion as permission to rule over everything?',linkedin+'#articles','Browse published essays')), 'Journal', 'On faith, authority and the strange business of being yourself online.'],
   ['/press/', 'Press & Media | Phillipa Aidoo', 'Press coverage, a short professional biography, and interview and speaking enquiries for Phillipa Aidoo.', `
     <section class="section"><div class="container"><div class="row align-items-center gy-4">
@@ -166,7 +166,7 @@ const pages = [
     </div></div></section>` + grid(
     card('Graphic Showbiz · December 2024','I don’t believe in competition','Gifty Owusu-Amoah interviews Mzphill about the single “Josiah” and what it means to grow as an artist.',graphic,'Read the interview')), 'Press', 'Interviews and a short bio for editors and event organisers.'],
   ['/contact/', 'Contact Phillipa Aidoo | Business, Press & Readers', 'Contact Phillipa Aidoo for technology projects, partnerships, interviews, speaking, creative collaborations or reader enquiries.', grid(
-    card('Business & creative work','Work with me','Tell me what you’re working on and where you’d like me to come in.',emailLink,contactEmail),
+    card('Business & creative work','Work with me','Tell me what you’re working on and where I can help.',emailLink,contactEmail),
     card('Press & literary enquiries','Get in touch','For interviews, speaking invitations and book enquiries, send me an email. I’d love to hear from readers, too.',emailLink,'Email Phillipa'),
     card('Writing updates','Follow my writing','I share new essays and book updates on LinkedIn.',linkedin,'Follow on LinkedIn')), 'Contact'],
 ];

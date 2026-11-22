@@ -85,7 +85,7 @@ export function workTabs(womate) {
   const tabs = [
     ['technology','Technology','Software and digital strategy','I build software at ALLMORROW, including CIRQUVO and handEwork. At Grow-Online Agency, I work with businesses on their websites, social media and how they reach customers online.','/portfolio/','Explore the portfolio','code-square'],
     ['climate','Climate','Climate leadership at WOMATE','I designed the technology behind WOMATE’s climate leadership work. As COO, I shape the organisation’s direction and build the systems that support its programmes.','/ventures/','Explore the ventures','globe-africa'],
-    ['writing','Writing','Novels and essays','I’ve been writing stories since I was thirteen. These days I write fiction and essays about things I keep coming back to, from faith and authority to how strange it feels to turn yourself into a brand.','/journal/','Read the journal','pen'],
+    ['writing','Writing','Novels and essays','I’ve spent over a decade writing stories. My fiction and essays follow questions I keep coming back to, from faith and authority to what happens when you turn yourself into a brand.','/journal/','Read the journal','pen'],
   ];
   return `<section id="features" class="features section">
     <div class="container section-title"><h2>What I do</h2></div>

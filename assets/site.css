@@ -18,7 +18,6 @@
 .mobile-nav-toggle, .scroll-top { background-clip: padding-box; border: 0; }
 .mobile-nav-toggle { padding: .35rem; background: none; }
 .hero .hero-content h1 { font: 700 clamp(2.75rem, 7.3vw, 6.75rem)/.98 var(--heading-font); letter-spacing: -.04em; }
-.hero .hero-content .manifesto { font: 600 clamp(1.2rem, 2.5vw, 1.85rem)/1.25 var(--heading-font); }
 .hero .hero-content p { max-width: 49ch; }
 .hero .hero-content p a { color: var(--butter); text-decoration: underline; text-underline-offset: .15em; }
 .author-photo { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 2rem; }
@@ -84,7 +83,7 @@
 @media (max-width: 767px) {
   .book-feature { grid-template-columns: 1fr; }
   .hero .customers-badge { display: block; right: .75rem; bottom: .75rem; max-width: calc(100% - 1.5rem); }
-  .hero .hero-content .manifesto, .hero .hero-content p { margin-inline: auto; }
+  .hero .hero-content p { margin-inline: auto; }
 }
 
 .hero, .call-to-action, .service-details .help-box {
@@ -157,7 +156,7 @@ h1, h2, h3 { overflow-wrap: anywhere; }
 }
 @media (max-width: 991.98px) {
   .hero .hero-content { text-align: left; }
-  .hero .hero-content .manifesto, .hero .hero-content p { margin-inline: 0; }
+  .hero .hero-content p { margin-inline: 0; }
   .hero .hero-buttons { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; justify-content: flex-start; }
   .hero .hero-buttons .btn { margin: 0 !important; }
   .book-feature.detail { grid-template-columns: 1fr; }

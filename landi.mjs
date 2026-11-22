@@ -70,7 +70,7 @@ export function homeHero(bookPath, bookName) {
         </div></div>
       </div>
       <div class="row stats-row gy-4 mt-5">
-        ${roles.map(([icon,name,role,url]) => `<div class="col-lg-3 col-md-6"><a href="${url}" class="stat-item"><span class="stat-icon"><i class="bi bi-${icon}" aria-hidden="true"></i></span><span class="stat-content"><strong>${name}</strong><span class="d-block">${role}</span></span></a></div>`).join('')}
+        ${roles.map(([icon,name,role,url]) => `<div class="col-lg-3 col-md-6"><a href="${url}" class="stat-item">${name === 'WOMATE' ? `<span class="stat-icon stat-icon-womate"><img src="/assets/photos/womate-logo.svg" alt="" width="140" height="80"></span>` : `<span class="stat-icon"><i class="bi bi-${icon}" aria-hidden="true"></i></span>`}<span class="stat-content"><strong>${name}</strong><span class="d-block">${role}</span></span></a></div>`).join('')}
       </div>
     </div>
   </section>`;

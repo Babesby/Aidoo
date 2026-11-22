@@ -5,6 +5,8 @@ import { siteHeader, footer, pageTitle, serviceCard as card, serviceGrid as grid
 const origin = new URL(process.env.SITE_URL || 'https://phillipaaidoo.allmorrow.com').origin;
 const mwahli = 'https://mwahli.allmorrow.com/';
 const womate = 'https://www.womate.org/';
+const contactEmail = 'phillipaaidoo12345@gmail.com';
+const emailLink = 'mailto:'+contactEmail;
 const linkedin = 'https://gh.linkedin.com/in/phillipa-aidoo';
 const editions = [
   ['Kindle','B0HSFRWVTC','EBook','tablet'],
@@ -105,7 +107,15 @@ const pages = [
       `<div class="book-feature detail"><div>${cover}</div><div><p class="eyebrow">${bookGenre}</p><p>By <a href="/about/">${author}</a></p><blockquote>${line}</blockquote>
       <p>${synopsis}</p>
       <a class="action d-lg-none" href="#buy-editions">Choose an edition</a>
-      <section class="sample"><h2>Read a sample</h2><p>Find preview options on the Kindle page.</p>${link(amazon,'Open Kindle listing')}</section></div></div>`)}
+      </div></div>
+      <section class="sample" aria-labelledby="sample-heading">
+        <div class="sample-icon" aria-hidden="true"><i class="bi bi-book"></i></div>
+        <div class="sample-copy">
+          <h2 id="sample-heading">Read a sample</h2>
+          <p>Open the Kindle edition on Amazon and select <strong>Read sample</strong> to preview the book.</p>
+        </div>
+        ${link(amazon,'Find the sample on Amazon',button)}
+      </section>`)}
     <section class="section book-reveal" aria-labelledby="book-reveal-title">
       <div class="container">
         <div class="section-title"><h2 id="book-reveal-title">Book reveal</h2></div>
@@ -123,8 +133,8 @@ const pages = [
     card('Graphic Showbiz · December 2024','I don’t believe in competition','Gifty Owusu-Amoah interviews Mzphill about the single “Josiah” and what it means to grow as an artist.',graphic,'Read the interview'),
     card('For editors & event organisers','Short biography','Phillipa Aidoo is a Ghanaian founder, software developer, digital strategist and author. She founded ALLMORROW, co-founded WOMATE and wrote the novel My Blue Rubber Slippers.','/contact/','Request press materials')), 'Press', 'Interviews and a short bio for editors and event organisers.'],
   ['/contact/', 'Contact Phillipa Aidoo | Business, Press & Readers', 'Contact Phillipa Aidoo for technology projects, partnerships, interviews, speaking, creative collaborations or reader enquiries.', grid(
-    card('Business & creative work','Work with me','Tell me what you’re working on and where you’d like me to come in.',linkedin,'Connect on LinkedIn'),
-    card('Press & literary enquiries','Get in touch','For interviews, speaking invitations and book enquiries, send me a note on LinkedIn. I’d love to hear from readers, too.',linkedin,'Find Phillipa on LinkedIn'),
+    card('Business & creative work','Work with me','Tell me what you’re working on and where you’d like me to come in.',emailLink,contactEmail),
+    card('Press & literary enquiries','Get in touch','For interviews, speaking invitations and book enquiries, send me an email. I’d love to hear from readers, too.',emailLink,'Email Phillipa'),
     card('Writing updates','Follow my writing','I share new essays and book updates on LinkedIn.',linkedin,'Follow on LinkedIn')), 'Contact'],
 ];
 

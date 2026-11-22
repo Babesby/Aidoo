@@ -49,7 +49,29 @@
 .book-feature blockquote { font: 550 clamp(1.25rem, 2.7vw, 2rem)/1.22 var(--heading-font); color: #26255d; margin: .75rem 0 1.25rem; }
 .book-art { display: block; width: 100%; max-width: 18rem; height: auto; margin: auto; border-radius: .75rem; }
 .book-gallery img { display: block; width: 100%; height: auto; border-radius: .75rem; }
-.sample h2 { font-size: 2rem; }
+.sample {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: .75rem 1rem;
+  align-items: start;
+  margin-top: 1.25rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border: 1px solid #dfd5ee;
+  border-radius: 1rem;
+  background: #f6f0fd;
+}
+.sample h2 { margin: 0 0 .25rem; font-size: clamp(1.3rem, 3vw, 1.8rem); }
+.sample p { margin: 0; }
+.sample .action { grid-column: 2; justify-self: start; min-height: 44px; }
+.sample-icon {
+  display: grid; place-items: center; width: 2.5rem; height: 2.5rem;
+  border-radius: .65rem; background: var(--lavender); color: var(--butter);
+}
+.services .service-card .read-more { overflow-wrap: anywhere; }
+@media (max-width: 575.98px) {
+  .sample .action { grid-column: 1 / -1; text-align: center; justify-self: stretch; }
+}
+
 .action { display: inline-block; padding: .6rem 1.1rem; border-radius: 2rem; background: var(--accent-color); color: white; font-weight: 700; }
 .action:hover { background: #35254f; color: white; }
 .text-link { font-weight: 800; }
@@ -161,3 +183,10 @@ h1, h2, h3 { overflow-wrap: anywhere; }
   border-radius: .875rem;
   background: #281e40;
 }
+
+.hero .stat-item .stat-icon-womate {
+  background: #0e4d4a;
+  width: 4rem;
+}
+.hero .stat-icon-womate img { display: block; width: 100%; height: auto; padding: .25rem; }
+.hero .stat-item:hover .stat-icon-womate { background: #0e4d4a; }

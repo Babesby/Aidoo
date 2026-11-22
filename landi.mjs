@@ -20,7 +20,7 @@ export function footer(linkedin) {
     <div class="container footer-top"><div class="row gy-4">
       <div class="col-lg-6 footer-about">
         <a href="/" class="logo d-flex align-items-center"><span class="sitename">Phillipa Aidoo.</span></a>
-        <p class="mt-2 mb-0">Founder, developer and author in Accra, Ghana.</p>
+        <p class="mt-2 mb-0">Founder, software developer, digital strategist and author in Accra, Ghana.</p>
         <div class="social-links d-flex mt-3"><a href="${linkedin}" aria-label="Phillipa Aidoo on LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a></div>
       </div>
       <div class="col-6 col-lg-3 footer-links"><h4>Explore</h4><ul><li><a href="/about/">About</a></li><li><a href="/ventures/">Ventures</a></li><li><a href="/portfolio/">Portfolio</a></li></ul></div>
@@ -61,7 +61,7 @@ export function homeHero(bookPath, bookName, allmorrowPath) {
           <div class="company-badge mb-4"><i class="bi bi-geo-alt me-2" aria-hidden="true"></i> Accra, Ghana</div>
           <h1 class="mb-4">Phillipa <span class="accent-text">Aidoo</span></h1>
           <p class="manifesto mb-3">I write. I build.<br>I question everything.</p>
-          <p class="mb-4">I’m a Ghanaian novelist and software developer, the founder of <a href="${allmorrowPath}">ALLMORROW</a> and cofounder and COO of WOMATE. My debut novel, <a href="${bookPath}"><em>${bookName}</em></a>, is a satire about a country where only the rich can afford to be poor.</p>
+          <p class="mb-4">I’m a Ghanaian novelist, software developer and digital strategist. I’m the founder of <a href="${allmorrowPath}">ALLMORROW</a> and cofounder and COO of WOMATE. My debut novel, <a href="${bookPath}"><em>${bookName}</em></a>, is a satire about a country where only the rich can afford to be poor.</p>
           <div class="hero-buttons"><a href="/portfolio/" class="btn btn-primary me-2">See my work</a><a href="${bookPath}" class="btn btn-link"><i class="bi bi-book me-1" aria-hidden="true"></i> Meet my debut novel</a></div>
         </div></div>
         <div class="col-lg-6"><div class="hero-image">

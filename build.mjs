@@ -62,7 +62,7 @@ const button = 'action';
 const cover = `<img class="book-art" src="/assets/photos/blue-rubber-slippers.webp" alt="My Blue Rubber Slippers cover featuring blue slippers in a glass display case" width="960" height="1200" loading="lazy">`;
 const feature = `<section class="book-feature"><div>${cover}</div><div><p class="label">Debut novel</p><h2><a href="${bookPath}">${bookName}</a></h2><p>Speculative satire by Ghanaian novelist Phillipa Aidoo. Available in Kindle, paperback and hardcover.</p><blockquote>${line}</blockquote>${link(bookPath,'Explore the novel',button)}</div></section>`;
 const pages = [
-  ['/', 'Phillipa Aidoo | Ghanaian Author, Developer and Founder', 'Phillipa Aidoo is a Ghanaian novelist, software developer and founder of ALLMORROW. Explore her work and her debut novel, My Blue Rubber Slippers.', `
+  ['/', 'Phillipa Aidoo | Author, Developer, Digital Strategist and Founder', 'Phillipa Aidoo is a Ghanaian novelist, software developer, digital strategist and founder of ALLMORROW. Her debut novel is My Blue Rubber Slippers.', `
     ${homeHero(bookPath,bookName,allmorrowPath)}
     ${workTabs(womate)}
     <div class="container">${feature}</div>

@@ -20,6 +20,7 @@
 .hero .hero-content h1 { font: 700 clamp(2.75rem, 7.3vw, 6.75rem)/.98 var(--heading-font); letter-spacing: -.04em; }
 .hero .hero-content .manifesto { font: 600 clamp(1.2rem, 2.5vw, 1.85rem)/1.25 var(--heading-font); }
 .hero .hero-content p { max-width: 49ch; }
+.hero .hero-content p a { color: var(--butter); text-decoration: underline; text-underline-offset: .15em; }
 .author-photo { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 2rem; }
 .hero .hero-image .hero-photo { max-width: 29rem; margin-inline: auto; }
 .hero .customers-badge { text-align: left; bottom: 1.2rem; right: 1.2rem; }

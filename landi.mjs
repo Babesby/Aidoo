@@ -32,7 +32,7 @@ export function footer(linkedin) {
 export function pageTitle(heading, intro, parent) {
   return `<div class="page-title light-background"><div class="container">
     <h1>${heading}</h1>
-    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li>${parent ? '<li><a href="/books/">Books</a></li>' : ''}<li class="current" aria-current="page">${heading}</li></ol></nav>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li>${parent ? `<li><a href="${parent[0]}">${parent[1]}</a></li>` : ''}<li class="current" aria-current="page">${heading}</li></ol></nav>
     ${intro ? `<p class="page-intro">${intro}</p>` : ''}
   </div></div>`;
 }
@@ -47,12 +47,12 @@ export function serviceGrid(...cards) {
   return `<section class="services section light-background" aria-label="Explore this page"><div class="container"><div class="row g-4">${cards.join('')}</div></div></section>`;
 }
 
-export function homeHero(bookPath, bookName) {
+export function homeHero(bookPath, bookName, allmorrowPath) {
   const roles = [
-    ['code-slash','ALLMORROW','Founder','/ventures/'],
+    ['code-slash','ALLMORROW','Founder',allmorrowPath],
     ['globe-africa','WOMATE','Co-founder &amp; COO','/ventures/'],
     ['window','Grow-Online Agency','Digital strategy','/portfolio/'],
-    ['book','My Blue Rubber Slippers','Author','/books/'],
+    ['book',bookName,'Author',bookPath],
   ];
   return `<section id="hero" class="hero section">
     <div class="container">
@@ -60,8 +60,8 @@ export function homeHero(bookPath, bookName) {
         <div class="col-lg-6"><div class="hero-content">
           <div class="company-badge mb-4"><i class="bi bi-geo-alt me-2" aria-hidden="true"></i> Accra, Ghana</div>
           <h1 class="mb-4">Phillipa <span class="accent-text">Aidoo</span></h1>
-          <p class="manifesto mb-3">I build things. I write things.<br>Occasionally, I question everything.</p>
-          <p class="mb-4">I founded ALLMORROW and lead strategy and software development at WOMATE. In my first novel, I imagined a country where only the rich can afford to be poor.</p>
+          <p class="manifesto mb-3">I write. I build.<br>I question everything.</p>
+          <p class="mb-4">I’m a Ghanaian novelist and software developer, the founder of <a href="${allmorrowPath}">ALLMORROW</a> and cofounder and COO of WOMATE. My debut novel, <a href="${bookPath}"><em>${bookName}</em></a>, is a satire about a country where only the rich can afford to be poor.</p>
           <div class="hero-buttons"><a href="/portfolio/" class="btn btn-primary me-2">See my work</a><a href="${bookPath}" class="btn btn-link"><i class="bi bi-book me-1" aria-hidden="true"></i> Meet my debut novel</a></div>
         </div></div>
         <div class="col-lg-6"><div class="hero-image">

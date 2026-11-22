@@ -185,8 +185,8 @@ h1, h2, h3 { overflow-wrap: anywhere; }
 }
 
 .hero .stat-item .stat-icon-womate {
-  background: #0e4d4a;
+  background: #fff;
   width: 4rem;
 }
-.hero .stat-icon-womate img { display: block; width: 100%; height: auto; padding: .25rem; }
-.hero .stat-item:hover .stat-icon-womate { background: #0e4d4a; }
+.hero .stat-icon-womate img { display: block; width: 100%; height: auto; padding: .25rem; filter: brightness(0) saturate(100%) invert(21%) sepia(27%) saturate(1594%) hue-rotate(133deg) brightness(96%) contrast(89%); }
+.hero .stat-item:hover .stat-icon-womate { background: #fff; }

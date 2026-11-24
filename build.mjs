@@ -4,6 +4,7 @@ import { siteHeader, footer, pageTitle, serviceCard as card, serviceGrid as grid
 
 const origin = new URL(process.env.SITE_URL || 'https://phillipaaidoo.allmorrow.com').origin;
 const mwahli = 'https://mwahli.allmorrow.com/';
+const handework = 'https://handework.allmorrow.com/';
 const womate = 'https://www.womate.org/';
 const contactEmail = 'phillipaaidoo12345@gmail.com';
 const emailLink = 'mailto:'+contactEmail;
@@ -110,10 +111,18 @@ const pages = [
           </div>
           <div class="col-lg-5">${projectPreview(mwahli,'MWAHLI','mwahli',508)}</div>
         </div>
+        <article class="row align-items-center gy-3 mt-5" aria-labelledby="handework-title">
+          <div class="col-lg-7">
+            <p class="eyebrow">Software development</p>
+            <h2 id="handework-title">handEwork</h2>
+            <p>An ALLMORROW platform where people in Ghana can find verified artisans, follow repairs through photos and approve the finished work.</p>
+            ${link(handework,'Visit handEwork')}
+          </div>
+          <div class="col-lg-5">${projectPreview(handework,'handEwork','handework',405)}</div>
+        </article>
       </div>
     </section>` + grid(
     card('Software development','CIRQUVO','In development at ALLMORROW.'),
-    card('Software development','handEwork','A software project at ALLMORROW.'),
     card('Digital strategy','Web & brand strategy','At Grow-Online Agency, I develop websites and plan how businesses show up across their online channels.','/ventures/','About Grow-Online Agency'),
     card('Creative industries','Artist management','I’ve worked in music and artist management. Get in touch if you have a music or artist project in mind.','/contact/','Discuss a project')), 'Selected work'],
   ['/books/', 'Books by Phillipa Aidoo | Ghanaian Fiction and Satire', 'Discover books by Phillipa Aidoo, starting with her debut novel My Blue Rubber Slippers, available in Kindle, paperback and hardcover editions.', '<div class="container">' + feature + '</div>', 'Books'],
